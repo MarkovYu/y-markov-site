@@ -299,6 +299,11 @@ h2 {
   gap: 1.25rem;
 }
 
+.pub-section {
+  display: grid;
+  gap: 1.25rem;
+}
+
 .section-heading {
   display: flex;
   flex-direction: column;
@@ -339,6 +344,65 @@ h2 {
 .publication-card,
 .contact-card {
   padding: 1.5rem;
+}
+
+.pub-stack,
+.conference-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-link-row {
+  margin: 0.25rem 0 1.5rem;
+}
+
+.pub-entry {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 250, 243, 0.88);
+  box-shadow: var(--shadow);
+}
+
+.pub-entry-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.pub-year {
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.pub-meta {
+  margin: 0.65rem 0 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.conference-year {
+  padding: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.conference-year:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.conference-list {
+  margin: 0.9rem 0 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.conference-list li {
+  color: var(--ink-soft);
+  line-height: 1.7;
 }
 
 .timeline li {
