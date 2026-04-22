@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Dr. Yuri Markov</title>
+  <meta name="description" content="Interactive UX research portfolio of Dr. Yuri Markov.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">YM</span>
+        <span class="brand-copy">
+          <strong>Dr. Yuri Markov</strong>
+          <span>UX Researcher</span>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="./index.html">Home</a>
+        <a class="nav-current" href="./portfolio.html">Portfolio</a>
+        <a href="./publications.html">Publications</a>
+        <a href="./research.html">Research</a>
+        <a href="./talks.html">Talks</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Portfolio</p>
+        <h1 class="page-title">Research cases designed to be scanned, not endured.</h1>
+        <p class="lede">A focused portfolio page where visitors can quickly filter work by context, open a case, and understand problem, method, findings, and product relevance without endless scrolling.</p>
+      </section>
+
+      <section class="section">
+        <div class="portfolio-overview">
+          <article class="info-card">
+            <p class="panel-label">Why this page works</p>
+            <h3>Fast scan first, detail on demand.</h3>
+            <p class="lede">
+              The portfolio is built around a simple decision flow: skim the list, filter by domain,
+              then inspect one selected case in depth. This keeps the page readable for hiring managers
+              and still rich enough for researchers.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <p class="panel-label">Methods across cases</p>
+            <ul class="compact-list">
+              <li>Comparative usability testing</li>
+              <li>Heuristic and scenario-based evaluation</li>
+              <li>Eye tracking and gaze-based analysis</li>
+              <li>Controlled behavioral experiments</li>
+              <li>Workload measurement with NASA TLX</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="portfolio-controls" aria-label="Portfolio filters">
+          <button class="filter-chip is-active" type="button" data-filter="all">All work</button>
+          <button class="filter-chip" type="button" data-filter="ux">UX research</button>
+          <button class="filter-chip" type="button" data-filter="attention">Attention & workload</button>
+          <button class="filter-chip" type="button" data-filter="memory">Memory & perception</button>
+          <button class="filter-chip" type="button" data-filter="applied">Applied insights</button>
+        </div>
+
+        <div class="portfolio-layout">
+          <div class="case-list" id="case-list" aria-live="polite"></div>
+
+          <aside class="case-panel" id="case-panel">
+            <p class="panel-label">Selected case</p>
+            <h3 id="case-title">How Secondary Task Shapes Driver Attention and Workload</h3>
+            <p class="case-summary" id="case-summary"></p>
+
+            <dl class="case-meta">
+              <div>
+                <dt>Context</dt>
+                <dd id="case-context"></dd>
+              </div>
+              <div>
+                <dt>Role</dt>
+                <dd id="case-role"></dd>
+              </div>
+              <div>
+                <dt>Methods</dt>
+                <dd id="case-methods"></dd>
+              </div>
+            </dl>
+
+            <div class="detail-block">
+              <h4>Problem</h4>
+              <p class="case-summary" id="case-problem"></p>
+            </div>
+
+            <div class="detail-block">
+              <h4>What happened</h4>
+              <ul id="case-results"></ul>
+            </div>
+
+            <div class="detail-block">
+              <h4>Why it matters</h4>
+              <ul id="case-impact"></ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./portfolio.js"></script>
+</body>
+</html>
