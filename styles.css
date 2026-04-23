@@ -287,11 +287,11 @@ h2 {
 .hero-photo {
   display: block;
   width: 100%;
-  height: clamp(19rem, 38vw, 32rem);
+  height: clamp(18rem, 34vw, 29rem);
   margin-bottom: 1rem;
   border-radius: var(--radius-md);
   object-fit: cover;
-  object-position: 50% 70%;
+  object-position: 50% 32%;
   filter: saturate(0.9) contrast(1.02);
 }
 
@@ -348,6 +348,7 @@ h2 {
 .pub-section {
   display: grid;
   gap: 1.25rem;
+  scroll-margin-top: 8rem;
 }
 
 .section-heading {
