@@ -36,22 +36,12 @@
     <main>
       <section class="page-hero">
         <p class="eyebrow">Portfolio</p>
-        <h1 class="page-title">Research cases designed to be scanned, not endured.</h1>
-        <p class="lede">A focused portfolio page where visitors can quickly filter work by context, open a case, and understand problem, method, findings, and product relevance without endless scrolling.</p>
+        <h1 class="page-title">UX research grounded in cognitive psychology.</h1>
+        <p class="lede">I am a cognitive psychologist with a strong background in behavioral studies. After years of studying how the brain interprets visual stimuli and human interaction with objects, I am excited to channel my expertise into the world of UX research. Below, you'll find a selection of my projects and how they demonstrate the real-world applicability of my research.</p>
       </section>
 
       <section class="section">
         <div class="portfolio-overview">
-          <article class="info-card">
-            <p class="panel-label">Why this page works</p>
-            <h3>Fast scan first, detail on demand.</h3>
-            <p class="lede">
-              The portfolio is built around a simple decision flow: skim the list, filter by domain,
-              then inspect one selected case in depth. This keeps the page readable for hiring managers
-              and still rich enough for researchers.
-            </p>
-          </article>
-
           <article class="info-card">
             <p class="panel-label">Methods across cases</p>
             <ul class="compact-list">
@@ -67,9 +57,7 @@
         <div class="portfolio-controls" aria-label="Portfolio filters">
           <button class="filter-chip is-active" type="button" data-filter="all">All work</button>
           <button class="filter-chip" type="button" data-filter="ux">UX research</button>
-          <button class="filter-chip" type="button" data-filter="attention">Attention & workload</button>
-          <button class="filter-chip" type="button" data-filter="memory">Memory & perception</button>
-          <button class="filter-chip" type="button" data-filter="applied">Applied insights</button>
+          <button class="filter-chip" type="button" data-filter="academic">Academic research</button>
         </div>
 
         <div class="portfolio-layout">
@@ -79,8 +67,15 @@
             <p class="panel-label">Selected case</p>
             <h3 id="case-title">How Secondary Task Shapes Driver Attention and Workload</h3>
             <p class="case-summary" id="case-summary"></p>
+            <div class="case-visual" id="case-visual-block" hidden>
+              <img id="case-visual" src="" alt="">
+            </div>
 
             <dl class="case-meta">
+              <div>
+                <dt>Original article</dt>
+                <dd id="case-article"></dd>
+              </div>
               <div>
                 <dt>Context</dt>
                 <dd id="case-context"></dd>
