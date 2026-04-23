@@ -46,7 +46,7 @@ button {
 }
 
 .site-shell {
-  width: min(calc(100% - 2rem), var(--max-width));
+  width: min(calc(100% - clamp(4rem, 8vw, 7rem)), var(--max-width));
   margin: 0 auto;
   padding-bottom: 4rem;
 }
@@ -59,7 +59,8 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem clamp(0.9rem, 2vw, 1.4rem);
+  margin-inline: calc(clamp(0.9rem, 2vw, 1.4rem) * -1);
   backdrop-filter: blur(18px);
 }
 
@@ -311,6 +312,10 @@ h2 {
   max-width: 55rem;
 }
 
+.section-heading + .research-grid {
+  margin-top: 1.35rem;
+}
+
 .section-heading-split {
   display: flex;
   align-items: end;
@@ -352,10 +357,6 @@ h2 {
   gap: 1rem;
 }
 
-.section-link-row {
-  margin: 0.25rem 0 1.5rem;
-}
-
 .pub-entry {
   padding: 1.5rem;
   border: 1px solid var(--line);
@@ -372,6 +373,13 @@ h2 {
   margin-bottom: 0.75rem;
 }
 
+.pub-entry .pub-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 0.95rem;
+  margin: 0;
+}
+
 .pub-year {
   color: var(--ink-soft);
   font-weight: 700;
@@ -383,26 +391,123 @@ h2 {
   line-height: 1.7;
 }
 
-.conference-year {
-  padding: 1.5rem;
+.journal {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--ink);
+  font-style: italic;
+  font-weight: 800;
+}
+
+.institution-marquee {
+  overflow: hidden;
+  margin: 0.5rem 0 2.75rem;
+  padding: 1rem 0 0;
+  border-block: 1px solid var(--line);
+  background: rgba(255, 250, 243, 0.58);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee-caption {
+  margin: 0 0 0.35rem;
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.9rem;
+  padding: 0.75rem 0 1rem;
+  animation: marquee-scroll 48s linear infinite;
+}
+
+.logo-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  width: 11.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: rgba(255, 252, 247, 0.92);
+  box-shadow: 0 10px 26px rgba(74, 54, 28, 0.07);
+}
+
+.logo-card img {
+  display: block;
+  max-width: 100%;
+  max-height: 2.2rem;
+  object-fit: contain;
+  filter: saturate(0.85) contrast(0.98);
+}
+
+.text-logo {
+  color: var(--ink);
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.topic-link {
+  display: block;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.topic-link:hover,
+.topic-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(184, 77, 23, 0.35);
+  box-shadow: 0 18px 40px rgba(88, 56, 25, 0.12);
+}
+
+.conference-group {
+  padding-top: 1.5rem;
   border-top: 1px solid var(--line);
 }
 
-.conference-year:first-child {
-  border-top: 0;
+.conference-group:first-child {
   padding-top: 0;
+  border-top: 0;
 }
 
-.conference-list {
-  margin: 0.9rem 0 0;
-  padding-left: 1.25rem;
+.conference-year-title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.conference-year-grid {
   display: grid;
   gap: 0.8rem;
 }
 
-.conference-list li {
-  color: var(--ink-soft);
-  line-height: 1.7;
+.conference-entry {
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 250, 243, 0.62);
+}
+
+.conference-entry h4 {
+  margin-bottom: 0.45rem;
+  font-size: 1.1rem;
+  line-height: 1.35;
 }
 
 .timeline li {
@@ -605,7 +710,7 @@ h2 {
 
 @media (max-width: 640px) {
   .site-shell {
-    width: min(calc(100% - 1rem), var(--max-width));
+    width: min(calc(100% - 2rem), var(--max-width));
   }
 
   .hero-copy,
