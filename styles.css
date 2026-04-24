@@ -362,6 +362,11 @@ h2 {
   margin-top: 1.35rem;
 }
 
+.section-heading + .talks-grid,
+.section-heading + .awards-card {
+  margin-top: 1.6rem;
+}
+
 .section-heading-split {
   display: flex;
   align-items: end;
@@ -388,6 +393,151 @@ h2 {
   grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.resource-spotlight {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 82% 28%, rgba(80, 125, 205, 0.18), transparent 16rem),
+    radial-gradient(circle at top right, rgba(216, 108, 49, 0.16), transparent 18rem),
+    linear-gradient(135deg, rgba(238, 245, 255, 0.82), rgba(255, 248, 239, 0.96) 45%, rgba(247, 237, 224, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.resource-spotlight-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.talks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.talk-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 250, 243, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.talk-card-featured {
+  background:
+    radial-gradient(circle at top right, rgba(216, 108, 49, 0.14), transparent 14rem),
+    rgba(255, 250, 243, 0.94);
+}
+
+.talk-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.talk-card-head .pub-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: max-content;
+  padding: 0.42rem 0.8rem;
+}
+
+.talk-card h3 {
+  line-height: 1.2;
+}
+
+.talk-meta {
+  margin: -0.3rem 0 0;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.talk-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.talk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.talk-tags li {
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-muted);
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.talk-links {
+  gap: 0.85rem;
+  margin-top: auto;
+}
+
+.talk-links .button {
+  min-height: 2.9rem;
+  padding: 0.78rem 1rem;
+  border-color: rgba(184, 77, 23, 0.16);
+  color: var(--accent-strong);
+  font-weight: 800;
+}
+
+.talk-links .button:hover,
+.talk-links .button:focus-visible {
+  border-color: rgba(184, 77, 23, 0.35);
+  background: #fff3e7;
+}
+
+.awards-card {
+  max-width: 58rem;
+}
+
+.awards-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.awards-list li {
+  position: relative;
+  padding: 0.95rem 1rem 0.95rem 3rem;
+  border: 1px solid rgba(42, 37, 28, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 252, 247, 0.8);
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.awards-list li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1.15rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #f2b262);
+  box-shadow: 0 0 0 0.25rem rgba(216, 108, 49, 0.12);
+  transform: translateY(-50%);
 }
 
 .info-card,
@@ -773,9 +923,11 @@ h2 {
   .section-heading-split,
   .contact-section,
   .hero,
+  .resource-spotlight,
   .portfolio-overview,
   .portfolio-layout,
   .profile-grid,
+  .talks-grid,
   .research-grid,
   .publication-grid {
     grid-template-columns: 1fr;
