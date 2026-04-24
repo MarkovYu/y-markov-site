@@ -45,11 +45,11 @@
           <article class="info-card">
             <p class="panel-label">Methods across cases</p>
             <ul class="compact-list">
-              <li>Comparative usability testing</li>
-              <li>Heuristic and scenario-based evaluation</li>
-              <li>Eye tracking and gaze-based analysis</li>
-              <li>Controlled behavioral experiments</li>
-              <li>Workload measurement with NASA TLX</li>
+              <li>Usability testing</li>
+              <li>Comparative concept evaluation</li>
+              <li>Experimental design</li>
+              <li>Eye tracking and attention analysis</li>
+              <li>Workload measurement</li>
             </ul>
           </article>
         </div>
@@ -60,20 +60,24 @@
           <button class="filter-chip" type="button" data-filter="academic">Academic research</button>
         </div>
 
-        <div class="portfolio-layout">
+        <div class="portfolio-stack">
           <div class="case-list" id="case-list" aria-live="polite"></div>
 
-          <aside class="case-panel" id="case-panel">
-            <p class="panel-label">Selected case</p>
-            <h3 id="case-title">How Secondary Task Shapes Driver Attention and Workload</h3>
+          <section class="case-panel" id="case-panel">
+            <div class="case-panel-top">
+              <div>
+                <p class="panel-label">Selected case</p>
+                <h3 id="case-title">How Secondary Task Shapes Driver Attention and Workload</h3>
+              </div>
+            </div>
             <p class="case-summary" id="case-summary"></p>
             <div class="case-visual" id="case-visual-block" hidden>
               <img id="case-visual" src="" alt="">
             </div>
 
             <dl class="case-meta">
-              <div>
-                <dt>Original article</dt>
+              <div id="case-source-block">
+                <dt id="case-source-label">Publication</dt>
                 <dd id="case-article"></dd>
               </div>
               <div>
@@ -90,21 +94,15 @@
               </div>
             </dl>
 
-            <div class="detail-block">
-              <h4>Problem</h4>
-              <p class="case-summary" id="case-problem"></p>
+            <div class="case-story" id="case-story"></div>
+            <div class="detail-block case-links-block" id="case-links-block" hidden>
+              <h4>Links</h4>
+              <div class="article-links" id="case-links"></div>
             </div>
-
-            <div class="detail-block">
-              <h4>What happened</h4>
-              <ul id="case-results"></ul>
+            <div class="case-panel-footer">
+              <button class="button button-secondary case-back" id="case-back" type="button">Back to case list</button>
             </div>
-
-            <div class="detail-block">
-              <h4>Why it matters</h4>
-              <ul id="case-impact"></ul>
-            </div>
-          </aside>
+          </section>
         </div>
       </section>
     </main>
