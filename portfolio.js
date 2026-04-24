@@ -9,6 +9,7 @@ const cases = [
     context: "Automotive UX / high-stakes interaction",
     role: "Supervisor of Master's thesis project in collaboration between Goethe University and BMW Research",
     methods: "Within-subjects design, driving simulator, SuRT task, NASA TLX, eye tracking, AOI analysis",
+    cardTags: ["eye tracking", "driving simulation"],
     visual: "./assets/images/portfolio/bmw-case.jpg",
     visualAlt: "Driving simulator setup and in-car view used in the BMW attention study.",
     sections: [
@@ -64,6 +65,7 @@ const cases = [
     context: "Fintech UX / financial communication",
     role: "UX Researcher at MTS Bank, from research design to final report",
     methods: "Comparative usability testing, randomized exposure order, explanation accuracy, preference analysis, confusion mapping",
+    cardTags: ["usability testing", "comparative concepts"],
     visual: "./assets/images/portfolio/credit-card-case.png",
     visualAlt: "Comparison of two grace period visualizations for the MTS Bank Zero credit card.",
     sections: [
@@ -118,6 +120,7 @@ const cases = [
     context: "E-commerce UX",
     role: "UX Researcher, test assignment",
     methods: "Heuristic evaluation, scenario walkthrough, comparative scoring, feature documentation",
+    cardTags: ["heuristic review", "comparative evaluation"],
     sections: [
       {
         label: "Situation",
@@ -198,7 +201,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "Grouping related visual features inside the same interface element can improve retention and recall.",
           "Reducing variation in one feature does not necessarily damage memory for another when the object stays coherent.",
@@ -246,7 +249,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "Depth cues and object size should be aligned carefully in immersive or spatial interfaces.",
           "Presenting larger elements farther away can enhance perceived size differences when that helps communication.",
@@ -295,7 +298,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "Interfaces should not rely on subtle state differences between similar items.",
           "Clearer differentiation between object identity and state can reduce confusion and handoff errors.",
@@ -345,7 +348,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "Visually similar items on a screen should be distinct enough to avoid location confusion.",
           "This is especially relevant for dashboards, control panels, warehousing, and logistics interfaces.",
@@ -393,7 +396,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "Sound can guide interpretation when visuals are ambiguous, abstract, or hard to parse.",
           "This is highly relevant for advertising, AR, VR, and multimodal product experiences.",
@@ -441,7 +444,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "Peripheral readability depends on group structure, not only on local spacing.",
           "In environments like road signage and advertising, nearby elements should be visually distinct enough to prevent confusion.",
@@ -488,7 +491,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "Familiar and meaningful visuals are more likely to be remembered in interfaces, ads, and packaging.",
           "This makes meaningful imagery a practical tool for supporting incidental memory.",
@@ -536,7 +539,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "Important information should be placed where users are most likely to foveate, not left to peripheral pickup.",
           "This matters for ads, road signs, interfaces, and any environment with crowded or uncertain displays.",
@@ -584,7 +587,7 @@ const cases = [
         ],
       },
       {
-        label: "Design relevance",
+        label: "Applicability",
         items: [
           "In high-stakes settings like driving, surveillance, or medical scanning, high workload can increase bias from recent experience.",
           "Reducing memory load can help users make more independent moment-to-moment judgments.",
@@ -630,7 +633,7 @@ function renderCaseList() {
   caseList.innerHTML = filteredCases
     .map((entry) => {
       const isActive = entry.id === selectedId;
-      const visibleTags = entry.tags.filter((tag) => tag !== "ux" && tag !== "academic");
+      const visibleTags = entry.cardTags ?? entry.tags.filter((tag) => tag !== "ux" && tag !== "academic");
 
       return `
         <button class="case-card ${isActive ? "is-active" : ""}" type="button" data-id="${entry.id}">
@@ -654,8 +657,20 @@ function renderCaseList() {
       selectedId = button.dataset.id;
       renderCaseList();
       renderCasePanel();
-      casePanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToWithOffset(casePanel, 20);
     });
+  });
+}
+
+function scrollToWithOffset(target, extraOffset = 16) {
+  const topbar = document.querySelector(".topbar");
+  const topbarHeight = topbar ? topbar.getBoundingClientRect().height : 0;
+  const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
+  const targetTop = Math.max(absoluteTop - topbarHeight - extraOffset, 0);
+
+  window.scrollTo({
+    top: targetTop,
+    behavior: "smooth",
   });
 }
 
@@ -721,7 +736,7 @@ chips.forEach((chip) => {
 });
 
 caseBack.addEventListener("click", () => {
-  controls.scrollIntoView({ behavior: "smooth", block: "start" });
+  scrollToWithOffset(controls, 20);
 });
 
 renderCaseList();
