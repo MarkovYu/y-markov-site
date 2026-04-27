@@ -1,5 +1,59 @@
 const cases = [
   {
+    id: "hse-app-lms",
+    title: "Shaping the HSE University App Around Real Student LMS Workflows",
+    short:
+      "Led a student UX research team to identify which Learning Management System (LMS) functions should move into the HSE University mobile app and which additions would actually reduce friction in day-to-day study life.",
+    year: "2020",
+    category: "UX Research",
+    context: "Education UX / student experience",
+    role: "Research lead supervising 3 student researchers and coordinating with the HSE University UX team",
+    methods: "Competitive review, semi-structured interviews, synthesis matrix, feature prioritization, scenario mapping",
+    cardTags: ["interviews", "feature prioritization"],
+    sections: [
+      {
+        label: "Situation",
+        body:
+          "The HSE University mobile app was being considered for a major expansion based on LMS functionality. The open question was not simply which features could be added, but which student workflows were frequent, painful, and worth moving into the app.",
+      },
+      {
+        label: "Task",
+        body:
+          "Lead a research effort that could help the university decide which LMS services students actually needed on mobile, how those needs differed across scenarios, and which opportunities were high-value versus low-priority.",
+      },
+      {
+        label: "Action",
+        items: [
+          "Supervised 3 student researchers and coordinated the work with the university's UX department.",
+          "Started with a review of existing HSE App flows, the proposed LMS-based expansion, and examples from university apps in other countries.",
+          "Built the interview guide around real student workflows: schedules, deadlines, grades, course materials, communication, campus navigation, library access, and administrative requests.",
+          "Organized and synthesized 20+ interviews with students from different programs, then consolidated feature-level feedback into a comparison matrix.",
+          "Mapped the research back to the product's `as is` and `to be` structure so recommendations could directly inform roadmap decisions.",
+        ],
+      },
+      {
+        label: "Results",
+        items: [
+          "Confirmed that students relied heavily on the app for schedules and classroom search, and often checked not only their own schedule but also those of friends and instructors.",
+          "Identified strong demand for mobile access to gradebook, ranking, course pages, study-program documents, free classrooms, and faster contact with the study office for requests such as certificates and passes.",
+          "Found that some proposed ideas were much less valuable than expected, especially chat/forum features, portal links, and an embedded corporate email client.",
+          "Surfaced important nuances instead of generic feature requests: maps mattered most for first-year onboarding, events needed filtering rather than more notifications, and deadline tools needed auto-updating rather than just a prettier UI.",
+          "Produced a clearer hierarchy of what should be added first to reduce study friction versus what could remain secondary or optional.",
+        ],
+      },
+      {
+        label: "Recommendations",
+        items: [
+          "Prioritize LMS-linked study essentials on mobile: gradebook, course information, announcements, and easier access to academic administration workflows.",
+          "Keep expanding around high-frequency student moments rather than low-usage ideas such as generic forums or duplicated portal access.",
+          "Treat notifications as a personalization problem: schedule changes and deadline updates matter, while broad event pushes should stay optional.",
+          "Use the app to reduce small but repeated study frictions, for example better deadline syncing, faster free-classroom search, and clearer access to course documentation from the schedule.",
+        ],
+      },
+    ],
+    tags: ["ux", "education UX", "student experience"],
+  },
+  {
     id: "driver-attention",
     title: "How Secondary Task Shapes Driver Attention and Workload: A UX Study of In-Car Distractions",
     short:
@@ -601,6 +655,32 @@ const cases = [
   },
 ];
 
+const categoryOrder = {
+  "UX Research": 0,
+  "Academic Research": 1,
+};
+
+const orderedCases = cases
+  .map((entry, index) => ({ ...entry, originalIndex: index }))
+  .sort((left, right) => {
+    const categoryDifference =
+      (categoryOrder[left.category] ?? Number.MAX_SAFE_INTEGER) -
+      (categoryOrder[right.category] ?? Number.MAX_SAFE_INTEGER);
+
+    if (categoryDifference !== 0) {
+      return categoryDifference;
+    }
+
+    const yearDifference = Number(right.year) - Number(left.year);
+
+    if (yearDifference !== 0) {
+      return yearDifference;
+    }
+
+    return left.originalIndex - right.originalIndex;
+  })
+  .map(({ originalIndex, ...entry }) => entry);
+
 const caseList = document.querySelector("#case-list");
 const casePanel = document.querySelector("#case-panel");
 const caseBack = document.querySelector("#case-back");
@@ -621,13 +701,15 @@ const chips = [...document.querySelectorAll(".filter-chip")];
 const controls = document.querySelector(".portfolio-controls");
 
 let currentFilter = "all";
-let selectedId = cases[0].id;
+let selectedId = orderedCases[0].id;
 
 function renderCaseList() {
-  const filteredCases = cases.filter((entry) => currentFilter === "all" || entry.tags.includes(currentFilter));
+  const filteredCases = orderedCases.filter(
+    (entry) => currentFilter === "all" || entry.tags.includes(currentFilter)
+  );
 
   if (!filteredCases.some((entry) => entry.id === selectedId)) {
-    selectedId = filteredCases[0]?.id ?? cases[0].id;
+    selectedId = filteredCases[0]?.id ?? orderedCases[0].id;
   }
 
   caseList.innerHTML = filteredCases
@@ -675,7 +757,7 @@ function scrollToWithOffset(target, extraOffset = 16) {
 }
 
 function renderCasePanel() {
-  const activeCase = cases.find((entry) => entry.id === selectedId) ?? cases[0];
+  const activeCase = orderedCases.find((entry) => entry.id === selectedId) ?? orderedCases[0];
   caseTitle.textContent = activeCase.title;
   caseSummary.textContent = activeCase.short;
   caseContext.textContent = activeCase.context;
