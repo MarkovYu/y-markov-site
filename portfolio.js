@@ -111,54 +111,57 @@ const cases = [
   },
   {
     id: "credit-card",
-    title: "Improving Credit Card Communication: Grace Period Visualization Testing",
+    title: "Making Credit Card Terms Understandable: UX Research for a Credit Card Landing Page",
     short:
-      "Comparative usability testing of grace period visualizations to find the clearest way to explain how to use the Zero credit card without paying interest.",
+      "A combined UX research project that tested how clearly a credit card landing page explained key terms, usage rules, and the grace-period model across desktop, mobile, and alternative visual concepts.",
     year: "2020",
     category: "UX Research",
     context: "Fintech UX / financial communication",
     role: "UX Researcher at MTS Bank, from research design to final report",
-    methods: "Comparative usability testing, randomized exposure order, explanation accuracy, preference analysis, confusion mapping",
-    cardTags: ["usability testing", "comparative concepts"],
+    methods:
+      "Two rounds of moderated UX research: a small website comprehension study followed by a small comparative concept test",
+    cardTags: ["website comprehension", "concept testing"],
     visual: "./assets/images/portfolio/credit-card-case.png",
     visualAlt: "Comparison of two grace period visualizations for the MTS Bank Zero credit card.",
     sections: [
       {
         label: "Situation",
         body:
-          'The "Zero" credit card had a communication problem: users struggled to understand how the grace period worked and how to avoid paying interest.',
+          "The landing page had to explain several non-trivial rules at once: product benefits, cashback conditions, repayment logic, and how to use the credit limit without unnecessary cost.",
       },
       {
         label: "Task",
         body:
-          "Evaluate three visual approaches to explain the grace period, identify which version was clearest, and surface the moments where confusion still appeared.",
+          "Evaluate whether the landing page actually helped people understand the product, then identify which parts of the communication needed redesign and which grace-period visualization explained the logic most clearly.",
       },
       {
         label: "Action",
         items: [
-          "Ran a comparative usability test in which each participant reviewed two versions of the visualization.",
-          "Asked participants to explain the card terms in their own words and choose the clearest version.",
-          "Randomized exposure order to reduce bias.",
-          "Tracked first impressions, explanation accuracy, version preference, and reported confusion points.",
+          "Ran a broader usability study of the desktop and mobile landing page, asking participants to find and explain key product conditions in their own words.",
+          "Tested whether users correctly understood benefits, cashback rules, tariff details, card delivery and top-up information, and the overall logic of the credit limit.",
+          "Used findings from that first round to run a second focused study comparing three grace-period visualization concepts.",
+          "Asked participants to retell the rules, compare versions, and describe moments that felt unclear, misleading, or cognitively heavy.",
         ],
       },
       {
         label: "Results",
         items: [
-          "Participants consistently preferred the timeline-based version because the format felt familiar and easier to follow.",
-          "The cleaner version created a better first impression, but some icons were distracting or unclear.",
-          "Low contrast and small text made important information harder to read.",
-          'Terms such as "minimum payment" and "commission" were misunderstood or confused with each other.',
-          "Participants repeatedly asked for concrete examples, which showed that example-driven learning was essential for understanding the grace period.",
+          "Basic operational information such as delivery, getting the card, and usage conditions was generally discoverable, but comprehension dropped once participants had to explain the financial mechanics in detail.",
+          "The mobile version buried secondary benefits because users did not immediately realize some content had to be explored through horizontal scrolling.",
+          "Cashback communication was weak: participants did not clearly understand the scope and limitations of the offer.",
+          'The credit-limit explanation created repeated confusion around the difference between "commission" and "minimum payment", as well as the overall repayment logic.',
+          "The tariffs section added friction because terminology was inconsistent between the main page and the detailed explanation.",
+          "The concept test showed that a timeline-based grace-period visualization was the easiest mental model, but all versions still needed clearer labels and concrete examples.",
         ],
       },
       {
         label: "Recommendations",
         items: [
-          "Use the timeline structure as the base because familiar formats increase confidence.",
-          "Clarify financial terms in context instead of assuming domain knowledge.",
-          "Add real examples with labeled dates such as purchase date and repayment date.",
-          "Improve contrast and type size, and remove decorative elements that compete with comprehension.",
+          "Keep the timeline structure as the base for grace-period communication because it matched the most familiar mental model for time-based rules.",
+          'Unify terminology across the product page and tariff details so that "commission" and "minimum payment" do not feel like different or competing concepts.',
+          "Rebuild the grace-period explanation with explicit labeled examples so users can map abstract rules onto a concrete scenario.",
+          "Group cashback conditions into a single clearly bounded block so users do not miss important limitations.",
+          "Make secondary benefits more visible on mobile instead of relying on horizontal discovery patterns that users may not notice.",
         ],
       },
     ],
@@ -215,6 +218,115 @@ const cases = [
       },
     ],
     tags: ["ux", "e-commerce UX", "comparative evaluation"],
+  },
+  {
+    id: "bank-website-functionality",
+    title: "Defining the Role of a Bank Website in the Product Ecosystem",
+    short:
+      "A mixed-method study that mapped which banking tasks customers expected to complete on the website, where the site was already useful, and where product management should treat the website and app as distinct channels.",
+    year: "2020",
+    category: "UX Research",
+    context: "Digital banking / channel strategy",
+    role: "UX Researcher at MTS Bank, from survey design to qualitative synthesis",
+    methods:
+      "Mixed-method UX research: a survey with dozens of respondents, followed by a smaller set of qualitative interviews",
+    cardTags: ["survey + interviews", "channel strategy"],
+    sections: [
+      {
+        label: "Situation",
+        body:
+          "The bank website was used for information lookup and some self-service tasks, but its exact role in the broader product ecosystem was unclear. The team needed to understand which tasks customers expected from the website, how it compared to other banks, and whether people truly preferred the site over the mobile app for any meaningful workflows.",
+      },
+      {
+        label: "Task",
+        body:
+          "Identify what customers used the site for today, what functionality they felt was missing, and where the website should be strengthened rather than treated as a weaker copy of the app.",
+      },
+      {
+        label: "Action",
+        items: [
+          "Ran a survey about website usage, expectations, and missing functionality across a broad respondent base.",
+          "Followed the survey with a smaller round of interviews to understand how customers searched for product information, chose between channels, and interpreted the role of the website in day-to-day banking tasks.",
+          "Compared current site usage with both desired functionality and examples of services respondents valued on competitor websites.",
+          "Used the interview stage to validate an important methodological issue: many respondents blurred the boundary between the website and the mobile app, so part of the survey reflected broader digital expectations rather than website-only behavior.",
+        ],
+      },
+      {
+        label: "Results",
+        items: [
+          "The website worked best as an information channel: customers primarily used it to check product conditions, review offers, and access a limited set of existing services.",
+          "The mobile app remained the preferred channel for day-to-day product management, but the website still mattered for specific information gaps that were not covered elsewhere.",
+          "Participants wanted the website to support a broader set of self-service tasks, especially utilities and mobile payments, loan repayment, PIN management, card controls, certificates, and clearer payment-status information.",
+          "Competitor comparisons showed that users noticed not just missing features, but also missing ways of presenting information clearly, for example concise product-specific summaries, clearer payment and debt breakdowns, and easier access to documents tied to a specific product rather than one large generic file.",
+          "A key research finding was methodological as well as product-related: customers often talked about the site and app as one digital experience, which meant channel expectations had to be interpreted carefully rather than taken at face value.",
+        ],
+      },
+      {
+        label: "Recommendations",
+        items: [
+          "Treat the website as a distinct channel with its own high-value jobs, rather than as an incomplete version of the app.",
+          "Prioritize self-service tasks that users explicitly expected on the website, especially payments, repayment flows, certificates, and account-control actions.",
+          "Improve product information architecture and product-specific documents so users can find detailed answers without falling back to support.",
+          "After the main study, compare the website with competitor sites to identify which features and interaction patterns worked especially well elsewhere and which ideas were worth adapting.",
+          "Combine survey and interview findings with complaint analysis and behavioral data before expanding functionality, because stated needs were partly shaped by confusion between channels.",
+        ],
+      },
+    ],
+    tags: ["ux", "fintech UX", "mixed-method research"],
+  },
+  {
+    id: "loyalty-program-clarity",
+    title: "Reducing Loyalty Program Friction Across App, SMS, and Support",
+    short:
+      "A qualitative fintech UX study of how cardholders understood loyalty-program conditions, tracked monthly progress, and dealt with breakdowns between the app, SMS updates, and support channels.",
+    year: "2020",
+    category: "UX Research",
+    context: "Fintech UX / loyalty program experience",
+    role: "UX Researcher at MTS Bank, from interview design to insight report",
+    methods:
+      "Qualitative UX research: in-depth interviews with roughly two dozen cardholders, including customers who had contacted support about reward accrual issues",
+    cardTags: ["interviews", "cross-channel friction"],
+    sections: [
+      {
+        label: "Situation",
+        body:
+          "The loyalty program was central to the value of the card, but the experience depended on several moving parts at once: understanding the rules, checking progress, trusting app and SMS signals, and knowing who to contact when something went wrong.",
+      },
+      {
+        label: "Task",
+        body:
+          "Understand which parts of the loyalty-program experience were already clear, where customers still struggled, and how the app, website, SMS communication, and support flows could better work together.",
+      },
+      {
+        label: "Action",
+        items: [
+          "Ran in-depth interviews with cardholders from different regions, including a subgroup of customers who had already contacted support about problems with accruals.",
+          "Tested how well participants understood program conditions, where they expected to find them, and how they checked whether monthly requirements had been met.",
+          "Mapped the strategies customers used in practice, including app checks, SMS-based estimation, over-spending as a safety buffer, and reliance on memorized rules instead of product interfaces.",
+          "Looked not only at comprehension, but also at breakdowns in responsibility: when users saw conflicting signals, which service they blamed, and how they tried to resolve the issue.",
+        ],
+      },
+      {
+        label: "Results",
+        items: [
+          "Most engaged cardholders understood the basic conditions well enough, but many relied on memory, rough heuristics, or manual self-checking rather than on one trusted source of truth.",
+          "Customers used several different strategies to estimate whether they had met the monthly conditions, which signaled that the product did not provide a single clear progress view.",
+          "Many participants wanted to monitor fulfillment through SMS, while others expected the app to show more explicit progress and clearer explanations.",
+          "When errors appeared in the app or in SMS communication, users often could not tell whether the issue belonged to the bank, the telecom product, or another service layer.",
+          "That cross-channel ambiguity created support friction: customers escalated to multiple teams because the system did not make ownership and status transparent.",
+        ],
+      },
+      {
+        label: "Recommendations",
+        items: [
+          "Provide one clearly trusted place to track progress toward monthly loyalty conditions instead of forcing customers to estimate fulfillment themselves.",
+          "Use SMS and app communication as complementary channels: one for timely status updates, the other for fuller explanations and history.",
+          "Make reward logic and accrual status easier to interpret, especially when transactions fail, are returned, or are processed differently than expected.",
+          "Clarify ownership in support and product messaging so customers know which team or channel is responsible when loyalty benefits do not appear as expected.",
+        ],
+      },
+    ],
+    tags: ["ux", "fintech UX", "qualitative research"],
   },
   {
     id: "objects-in-pieces",
