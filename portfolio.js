@@ -117,12 +117,12 @@ const cases = [
     year: "2020",
     category: "UX Research",
     context: "Fintech UX / financial communication",
-    role: "UX Researcher at MTS Bank, from research design to final report",
+    role: "UX Researcher for a large retail bank, from research design to final report",
     methods:
       "Two rounds of moderated UX research: a small website comprehension study followed by a small comparative concept test",
     cardTags: ["website comprehension", "concept testing"],
     visual: "./assets/images/portfolio/credit-card-case.png",
-    visualAlt: "Comparison of two grace period visualizations for the MTS Bank Zero credit card.",
+    visualAlt: "Comparison of alternative grace period visualizations for a credit card landing page.",
     sections: [
       {
         label: "Situation",
@@ -227,7 +227,7 @@ const cases = [
     year: "2020",
     category: "UX Research",
     context: "Digital banking / channel strategy",
-    role: "UX Researcher at MTS Bank, from survey design to qualitative synthesis",
+    role: "UX Researcher for a large retail bank, from survey design to qualitative synthesis",
     methods:
       "Mixed-method UX research: a survey with dozens of respondents, followed by a smaller set of qualitative interviews",
     cardTags: ["survey + interviews", "channel strategy"],
@@ -256,8 +256,8 @@ const cases = [
         items: [
           "The website worked best as an information channel: customers primarily used it to check product conditions, review offers, and access a limited set of existing services.",
           "The mobile app remained the preferred channel for day-to-day product management, but the website still mattered for specific information gaps that were not covered elsewhere.",
-          "Participants wanted the website to support a broader set of self-service tasks, especially utilities and mobile payments, loan repayment, PIN management, card controls, certificates, and clearer payment-status information.",
-          "Competitor comparisons showed that users noticed not just missing features, but also missing ways of presenting information clearly, for example concise product-specific summaries, clearer payment and debt breakdowns, and easier access to documents tied to a specific product rather than one large generic file.",
+          "Participants wanted the website to support a broader set of self-service tasks, especially payments, repayment flows, account controls, certificates, and clearer status information for product servicing.",
+          "Competitor comparisons showed that users noticed not just missing features, but also missing ways of presenting information clearly, for example concise product-specific summaries, clearer payment breakdowns, and easier access to product-level documents.",
           "A key research finding was methodological as well as product-related: customers often talked about the site and app as one digital experience, which meant channel expectations had to be interpreted carefully rather than taken at face value.",
         ],
       },
@@ -266,7 +266,7 @@ const cases = [
         items: [
           "Treat the website as a distinct channel with its own high-value jobs, rather than as an incomplete version of the app.",
           "Prioritize self-service tasks that users explicitly expected on the website, especially payments, repayment flows, certificates, and account-control actions.",
-          "Improve product information architecture and product-specific documents so users can find detailed answers without falling back to support.",
+          "Improve product information architecture and product-level documents so users can find detailed answers without falling back to support.",
           "After the main study, compare the website with competitor sites to identify which features and interaction patterns worked especially well elsewhere and which ideas were worth adapting.",
           "Combine survey and interview findings with complaint analysis and behavioral data before expanding functionality, because stated needs were partly shaped by confusion between channels.",
         ],
@@ -282,9 +282,9 @@ const cases = [
     year: "2020",
     category: "UX Research",
     context: "Fintech UX / loyalty program experience",
-    role: "UX Researcher at MTS Bank, from interview design to insight report",
+    role: "UX Researcher for a large retail bank, from interview design to insight report",
     methods:
-      "Qualitative UX research: in-depth interviews with roughly two dozen cardholders, including customers who had contacted support about reward accrual issues",
+      "Qualitative UX research: in-depth interviews with roughly two dozen cardholders, including customers who had already contacted support about reward accrual issues",
     cardTags: ["interviews", "cross-channel friction"],
     sections: [
       {
@@ -300,10 +300,10 @@ const cases = [
       {
         label: "Action",
         items: [
-          "Ran in-depth interviews with cardholders from different regions, including a subgroup of customers who had already contacted support about problems with accruals.",
+          "Ran in-depth interviews with cardholders, including a subgroup of customers who had already contacted support about reward accrual issues.",
           "Tested how well participants understood program conditions, where they expected to find them, and how they checked whether monthly requirements had been met.",
-          "Mapped the strategies customers used in practice, including app checks, SMS-based estimation, over-spending as a safety buffer, and reliance on memorized rules instead of product interfaces.",
-          "Looked not only at comprehension, but also at breakdowns in responsibility: when users saw conflicting signals, which service they blamed, and how they tried to resolve the issue.",
+          "Mapped the strategies customers used in practice, including app checks, SMS-based estimation, safety-buffer behavior, and reliance on memorized rules instead of product interfaces.",
+          "Looked not only at comprehension, but also at cross-channel breakdowns: when users saw conflicting signals, how they interpreted the issue, and how they tried to resolve it.",
         ],
       },
       {
@@ -312,8 +312,8 @@ const cases = [
           "Most engaged cardholders understood the basic conditions well enough, but many relied on memory, rough heuristics, or manual self-checking rather than on one trusted source of truth.",
           "Customers used several different strategies to estimate whether they had met the monthly conditions, which signaled that the product did not provide a single clear progress view.",
           "Many participants wanted to monitor fulfillment through SMS, while others expected the app to show more explicit progress and clearer explanations.",
-          "When errors appeared in the app or in SMS communication, users often could not tell whether the issue belonged to the bank, the telecom product, or another service layer.",
-          "That cross-channel ambiguity created support friction: customers escalated to multiple teams because the system did not make ownership and status transparent.",
+          "When inconsistent status signals appeared across channels, users often could not tell where the issue originated or what to trust.",
+          "That cross-channel ambiguity created support friction because ownership and resolution status were not transparent enough to users.",
         ],
       },
       {
@@ -322,11 +322,118 @@ const cases = [
           "Provide one clearly trusted place to track progress toward monthly loyalty conditions instead of forcing customers to estimate fulfillment themselves.",
           "Use SMS and app communication as complementary channels: one for timely status updates, the other for fuller explanations and history.",
           "Make reward logic and accrual status easier to interpret, especially when transactions fail, are returned, or are processed differently than expected.",
-          "Clarify ownership in support and product messaging so customers know which team or channel is responsible when loyalty benefits do not appear as expected.",
+          "Clarify responsibility and status in support and product messaging so customers know where to go when loyalty benefits do not appear as expected.",
         ],
       },
     ],
     tags: ["ux", "fintech UX", "qualitative research"],
+  },
+  {
+    id: "gaming-audience-survey",
+    title: "Large-Scale Audience Survey Design for a Digital Entertainment Product",
+    short:
+      "A large-scale quantitative research case about turning broad audience and product questions into a structured cross-country survey program for engagement, spending behavior, segmentation, and market comparison.",
+    year: "2024",
+    category: "UX Research",
+    context: "Gaming research / quantitative strategy",
+    role: "Quantitative researcher for an NDA digital entertainment project",
+    methods:
+      "Survey architecture in Alchemer, branching questionnaire design, R and Excel analysis, segmentation, cross-country comparison",
+    cardTags: ["survey design", "quantitative research"],
+    sections: [
+      {
+        label: "Situation",
+        body:
+          "A product and strategy team needed a clearer quantitative picture of audience behavior across engagement, content consumption, gaming habits, platform usage, spending behavior, satisfaction, and demographics.",
+      },
+      {
+        label: "Task",
+        body:
+          "Design a survey instrument that could translate broad business questions into measurable variables, support hypothesis-driven analysis, and scale from an initial launch to a broader international research program.",
+      },
+      {
+        label: "Action",
+        items: [
+          "Reduced a raw pool of more than two hundred candidate items into a tighter final questionnaire built for analytical usefulness rather than questionnaire sprawl.",
+          "Structured the instrument around screeners, real-world engagement, content consumption, gaming habits, platform usage, monetization, satisfaction, and player profile variables.",
+          "Built the questionnaire in Alchemer with branching logic so different respondent paths stayed relevant while preserving a stable analytical backbone for comparison.",
+          "Used the initial launch as both a research wave and a quality check, then extended the same framework to five countries with roughly one thousand respondents in each market.",
+          "Ran the analytical workflow in R and Excel, including data cleaning, preprocessing, variable construction, descriptive analysis, correlations, regression models, chi-square tests, t-tests, and segmentation work.",
+        ],
+      },
+      {
+        label: "Results",
+        items: [
+          "Produced one deep market report and one larger cross-market comparison report designed for product and strategy decisions.",
+          "Identified key drivers of engagement, playtime, and spending behavior.",
+          "Surfaced distinct audience segments and meaningful behavioral differences across markets.",
+          "Created a measurement framework strong enough to support both immediate decision-making and later market expansion.",
+        ],
+      },
+      {
+        label: "Recommendations",
+        items: [
+          "Treat survey design as measurement architecture, not just question writing, when the goal is to support segmentation and strategic analysis.",
+          "Use a stable core questionnaire with carefully designed branching so expansion across markets does not break comparability.",
+          "Combine descriptive reporting with inferential analysis to move from audience description to actual product and strategy guidance.",
+          "Build survey systems that stay useful after the first launch, so the same instrument can support both immediate decisions and later international comparison.",
+        ],
+      },
+    ],
+    tags: ["ux", "gaming UX", "quantitative research"],
+  },
+  {
+    id: "live-service-retention",
+    title: "Designing a Retention Research Plan for a Live-Service Multiplayer Game",
+    short:
+      "An anonymized gaming UX case built from a test assignment: framing early and late player drop-off, reviewing public trend signals, and designing a mixed-method research plan to explain retention problems more precisely.",
+    year: "2025",
+    category: "UX Research",
+    context: "Gaming UX / retention research",
+    role: "Research strategist, test assignment for a multiplayer game team",
+    methods:
+      "Public trend review, stakeholder question design, behavioral-metrics framework, exit survey design, interview and playtest planning",
+    cardTags: ["research strategy", "gaming retention"],
+    sections: [
+      {
+        label: "Situation",
+        body:
+          "A live-service multiplayer game showed two different retention concerns at once: some players left very early, within the first sessions, while more experienced players also dropped off despite ongoing content updates.",
+      },
+      {
+        label: "Task",
+        body:
+          "Design a research approach that could separate early drop-off from late drop-off, connect player behavior to likely causes, and give the team a clearer path for prioritizing onboarding, engagement, and long-term retention work.",
+      },
+      {
+        label: "Action",
+        items: [
+          "Started with a review of public player-trend signals across multiple content cycles to understand whether the retention problem looked stable, seasonal, or tied to specific update patterns.",
+          "Used that review to frame two distinct problem spaces: first-session churn and experienced-player churn.",
+          "Outlined the stakeholder questions, behavioral metrics, and comparison groups needed to validate both problems with real product data.",
+          "Designed a mixed-method plan that combined behavioral analysis, in-product exit surveys, onboarding playtests, and interviews with disengaged or returning players.",
+        ],
+      },
+      {
+        label: "Research output",
+        items: [
+          "The case established that retention could not be treated as one generic problem: early and late drop-off likely reflected different causes and therefore required different evidence.",
+          "It translated a vague retention concern into a structured plan with clear segments, measurable behaviors, and hypotheses worth testing.",
+          "The proposed analytics layer focused on performance, progression, map and mode usage, social experience, and interaction with core mechanics rather than on one surface-level KPI.",
+          "The qualitative layer was designed to explain what behavioral metrics alone could not reveal, especially confusion, frustration, content fatigue, perceived unfairness, and onboarding breakdowns.",
+        ],
+      },
+      {
+        label: "Recommendations",
+        items: [
+          "Treat early churn and experienced-player churn as separate research tracks, not as one retention bucket.",
+          "Use product data to identify behavioral predictors of drop-off before running interviews, so qualitative work can focus on the most meaningful segments.",
+          "Add lightweight in-context feedback collection at moments of disengagement instead of relying only on delayed retrospective surveys.",
+          "Use public trend review as framing, but validate every major hypothesis against internal player behavior before making roadmap decisions.",
+        ],
+      },
+    ],
+    tags: ["ux", "gaming UX", "research strategy"],
   },
   {
     id: "objects-in-pieces",
@@ -772,6 +879,17 @@ const categoryOrder = {
   "Academic Research": 1,
 };
 
+const uxCaseOrder = {
+  "gaming-audience-survey": 0,
+  "driver-attention": 1,
+  "credit-card": 2,
+  "bank-website-functionality": 3,
+  "loyalty-program-clarity": 4,
+  "hse-app-lms": 5,
+  "live-service-retention": 6,
+  "fashion-platforms": 7,
+};
+
 const orderedCases = cases
   .map((entry, index) => ({ ...entry, originalIndex: index }))
   .sort((left, right) => {
@@ -781,6 +899,16 @@ const orderedCases = cases
 
     if (categoryDifference !== 0) {
       return categoryDifference;
+    }
+
+    if (left.category === "UX Research" && right.category === "UX Research") {
+      const uxDifference =
+        (uxCaseOrder[left.id] ?? Number.MAX_SAFE_INTEGER) -
+        (uxCaseOrder[right.id] ?? Number.MAX_SAFE_INTEGER);
+
+      if (uxDifference !== 0) {
+        return uxDifference;
+      }
     }
 
     const yearDifference = Number(right.year) - Number(left.year);
@@ -796,6 +924,8 @@ const orderedCases = cases
 const caseList = document.querySelector("#case-list");
 const casePanel = document.querySelector("#case-panel");
 const caseBack = document.querySelector("#case-back");
+const casePrev = document.querySelector("#case-prev");
+const caseNext = document.querySelector("#case-next");
 const caseTitle = document.querySelector("#case-title");
 const caseSummary = document.querySelector("#case-summary");
 const caseArticle = document.querySelector("#case-article");
@@ -815,10 +945,12 @@ const controls = document.querySelector(".portfolio-controls");
 let currentFilter = "all";
 let selectedId = orderedCases[0].id;
 
+function getFilteredCases() {
+  return orderedCases.filter((entry) => currentFilter === "all" || entry.tags.includes(currentFilter));
+}
+
 function renderCaseList() {
-  const filteredCases = orderedCases.filter(
-    (entry) => currentFilter === "all" || entry.tags.includes(currentFilter)
-  );
+  const filteredCases = getFilteredCases();
 
   if (!filteredCases.some((entry) => entry.id === selectedId)) {
     selectedId = filteredCases[0]?.id ?? orderedCases[0].id;
@@ -833,7 +965,7 @@ function renderCaseList() {
         <button class="case-card ${isActive ? "is-active" : ""}" type="button" data-id="${entry.id}">
           <div class="case-card-top">
             <span class="case-type-pill">${entry.category}</span>
-            <span class="case-year">${entry.year}</span>
+            ${entry.category === "Academic Research" ? `<span class="case-year">${entry.year}</span>` : ""}
           </div>
           <h3>${entry.title}</h3>
           <p>${entry.short}</p>
@@ -870,6 +1002,11 @@ function scrollToWithOffset(target, extraOffset = 16) {
 
 function renderCasePanel() {
   const activeCase = orderedCases.find((entry) => entry.id === selectedId) ?? orderedCases[0];
+  const filteredCases = getFilteredCases();
+  const activeIndex = filteredCases.findIndex((entry) => entry.id === activeCase.id);
+  const previousCase = activeIndex > 0 ? filteredCases[activeIndex - 1] : null;
+  const nextCase = activeIndex >= 0 && activeIndex < filteredCases.length - 1 ? filteredCases[activeIndex + 1] : null;
+
   caseTitle.textContent = activeCase.title;
   caseSummary.textContent = activeCase.short;
   caseContext.textContent = activeCase.context;
@@ -918,6 +1055,11 @@ function renderCasePanel() {
     caseVisual.src = "";
     caseVisual.alt = "";
   }
+
+  casePrev.disabled = !previousCase;
+  caseNext.disabled = !nextCase;
+  casePrev.dataset.id = previousCase?.id ?? "";
+  caseNext.dataset.id = nextCase?.id ?? "";
 }
 
 chips.forEach((chip) => {
@@ -931,6 +1073,28 @@ chips.forEach((chip) => {
 
 caseBack.addEventListener("click", () => {
   scrollToWithOffset(controls, 20);
+});
+
+casePrev.addEventListener("click", () => {
+  if (!casePrev.dataset.id) {
+    return;
+  }
+
+  selectedId = casePrev.dataset.id;
+  renderCaseList();
+  renderCasePanel();
+  scrollToWithOffset(casePanel, 20);
+});
+
+caseNext.addEventListener("click", () => {
+  if (!caseNext.dataset.id) {
+    return;
+  }
+
+  selectedId = caseNext.dataset.id;
+  renderCaseList();
+  renderCasePanel();
+  scrollToWithOffset(casePanel, 20);
 });
 
 renderCaseList();
