@@ -344,12 +344,12 @@ const cases = [
       {
         label: "Situation",
         body:
-          "A product and strategy team needed a clearer quantitative picture of audience behavior across engagement, content consumption, gaming habits, platform usage, spending behavior, satisfaction, and demographics.",
+          "A product and strategy team needed to understand whether the product had room to grow in new markets, whether there was a viable audience there, and how the product could realistically compete. To answer that, the team first needed a clearer quantitative picture of audience behavior, habits, spending patterns, satisfaction, and market differences.",
       },
       {
         label: "Task",
         body:
-          "Design a survey instrument that could translate broad business questions into measurable variables, support hypothesis-driven analysis, and scale from an initial launch to a broader international research program.",
+          "Design a survey instrument that could translate strategic market-entry and competition questions into measurable variables, support hypothesis-driven analysis, and scale from an initial launch to a broader international research program.",
       },
       {
         label: "Action",
