@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="promo.css">
+<style>
+  body{min-height:100vh;background:radial-gradient(900px 520px at 74% -18%, rgba(74,134,212,.16), transparent 60%), var(--bg)}
+  .dmain{flex:1;width:100%;max-width:var(--maxw);margin:0 auto;padding:clamp(34px,4.6vh,58px) var(--gutter-x) clamp(32px,4.2vh,52px)}
+  h1{font-family:var(--font-display);font-size:clamp(34px,2.25vw + 1.2vh,56px);line-height:1.07;font-weight:600;letter-spacing:-.02em;text-wrap:balance;margin:0 0 clamp(7px,1vh,12px);max-width:960px}
+  h1 .g{color:var(--accent)}
+  .lead{color:var(--dim);font-size:clamp(16px,.45vw + .85vh,19px);max-width:800px;margin-bottom:clamp(24px,3.2vh,38px);line-height:1.52}
+  .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(330px,.85fr);gap:clamp(28px,4vw,52px);align-items:start}
+  ol{list-style:none;counter-reset:s}
+  li{counter-increment:s;position:relative;padding:0 0 clamp(19px,2.35vh,26px) 58px;min-height:46px}
+  li::before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:8px;background:var(--accent-strong);color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center}
+  li::after{content:"";position:absolute;left:18px;top:44px;bottom:6px;width:2px;background:var(--line2)}
+  li:last-child::after{display:none}
+  li h3{font-size:19px;font-weight:700;margin-bottom:6px}
+  li p{color:var(--dim);font-size:15px;line-height:1.56}
+  li a{color:var(--accent);font-weight:600;text-decoration:none}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--surface2);border:1px solid var(--line2);border-radius:6px;padding:1px 7px;font-size:13px;color:var(--accent3)}
+  .tag{display:inline-block;background:var(--accent-soft);color:var(--accent3);border:1px solid var(--accent-line);border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600;margin-left:4px}
+  .panel{background:rgba(12,13,16,.92);border:1px solid var(--line2);border-radius:8px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5);position:sticky;top:clamp(18px,3vh,30px)}
+  .ph{display:flex;align-items:center;gap:10px;padding:13px 15px;border-bottom:1px solid var(--line)}
+  .ph .l{width:19px;height:19px;color:var(--accent)}
+  .ph b{font-size:14px;font-weight:600}
+  .pb{padding:15px}
+  .sec{font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:rgba(236,236,238,.34);margin:0 0 10px;display:flex;align-items:center;gap:7px}
+  .step-badge{width:16px;height:16px;border-radius:50%;background:var(--accent-strong);color:#fff;font-size:9.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+  .fl{font-size:12px;color:var(--dim);margin:0 0 6px}
+  .inp{background:var(--surface);border:1px solid var(--line2);border-radius:8px;padding:9px 10px;font-size:13.5px;color:var(--fg);overflow-wrap:anywhere}
+  .inp.key{border-color:var(--accent-line);box-shadow:0 0 0 3px var(--accent-soft);font-family:ui-monospace,monospace;color:var(--accent3)}
+  .sel{display:flex;align-items:center;justify-content:space-between}
+  .sel svg{width:13px;height:13px;color:var(--dim)}
+  .note{margin-top:clamp(24px,3.2vh,34px);color:var(--dim);font-size:14px;display:flex;align-items:flex-start;gap:9px;max-width:860px;line-height:1.52}
+  .note svg{width:17px;height:17px;color:var(--ok);flex:none;margin-top:2px}
+  @media (max-width:850px){.dmain{padding:36px 28px 42px}.wrap{grid-template-columns:1fr;gap:28px}.panel{position:relative;top:0}h1{font-size:clamp(30px,8vw,36px)}.lead{font-size:16px}}
+  @media (max-width:430px){li{padding-left:52px}li::before{width:38px;height:38px}.panel{border-radius:8px}.pb{padding:14px}.inp.key{font-size:12px}}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <img class="logo" src="icon.png" alt="Dual Subtitles">
+    <span class="brand">Dual Subtitles</span>
+    <nav class="nav">
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html" class="active">DeepL setup</a>
+    </nav>
+    <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% free</span>
+  </header>
+
+  <main class="dmain">
+    <h1 class="sr">Want the <span class="g">best</span> translation? Add a free DeepL key</h1>
+    <p class="lead sr">The extension works out of the box. For noticeably more natural translations, connect your own <b>free</b> DeepL API key &mdash; it takes two minutes and stays on your device.</p>
+
+    <div class="wrap">
+      <ol>
+        <li class="sr">
+          <h3>Create a free DeepL API account</h3>
+          <p>Open <a href="https://www.deepl.com/pro-api">deepl.com/pro-api</a> and sign up for <b>DeepL API Free</b>. A card is required to verify the account, but the free plan is never charged. <span class="tag">free &middot; 500,000 chars/mo</span></p>
+        </li>
+        <li class="sr">
+          <h3>Copy your authentication key</h3>
+          <p>In your DeepL account go to <b>Account &rarr; API keys</b> and copy the key. Free-plan keys end with <code>:fx</code>.</p>
+        </li>
+        <li class="sr">
+          <h3>Open the extension panel</h3>
+          <p>On a video page, open the Dual Subtitles panel and go to <b>2 &middot; Translation &rarr; Translator keys / servers</b>.</p>
+        </li>
+        <li class="sr">
+          <h3>Paste the key</h3>
+          <p>Paste it into the <b>DeepL API key</b> field. It is saved locally in your browser only.</p>
+        </li>
+        <li class="sr">
+          <h3>Pick DeepL and enjoy</h3>
+          <p>Set <b>Translator</b> to <b>DeepL</b> or leave <b>Auto</b>; DeepL is used first when a key is present. Done.</p>
+        </li>
+      </ol>
+
+      <div class="panel sr">
+        <div class="ph">
+          <svg class="l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M6 16h5M14 16h4M6 12h2"/></svg>
+          <b>Dual Subtitles</b>
+        </div>
+        <div class="pb">
+          <div class="sec"><span class="step-badge">2</span>Translation</div>
+          <div class="fl">Translator</div>
+          <div class="inp sel" style="margin-bottom:13px">DeepL (API key) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></div>
+          <div class="sec" style="margin-top:4px">Translator keys / servers</div>
+          <div class="fl">DeepL API key</div>
+          <div class="inp key">a1b2c3d4-5e6f-7890-abcd-ef1234567890:fx</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+      <span>Your key is stored only in your browser (<code>chrome.storage.local</code>) and is sent solely to DeepL to translate. It is never shared with the developer. No key? The extension keeps working with the free built-in translators.</span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="fbrand"><img src="icon.png" alt="">Dual Subtitles</span>
+    <span>Free &middot; no account &middot; works on Prime Video &amp; Kino.pub</span>
+    <nav class="flinks">
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="license.html">License</a>
+      <a href="https://www.deepl.com/pro-api">DeepL API</a>
+      <a href="../index.html">Made by Yuri Markov</a>
+    </nav>
+  </footer>
+
+  <script>
+    (function(){
+      var els=[].slice.call(document.querySelectorAll('.sr'));
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce||!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in');});return;}
+      document.querySelectorAll('ol li.sr').forEach(function(li,i){li.setAttribute('data-sr-i',i);});
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(!en.isIntersecting)return;
+          var el=en.target;
+          var delay=Math.min(el.hasAttribute('data-sr-i')?+el.getAttribute('data-sr-i'):0,6)*70;
+          setTimeout(function(){el.classList.add('in');},delay);
+          io.unobserve(el);
+        });
+      },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(e){io.observe(e);});
+      // safety: never leave content hidden if IO doesn't fire (e.g. no paint)
+      setTimeout(function(){els.forEach(function(e){e.classList.add('in');});},1500);
+    })();
+  </script>
+</body>
+</html>

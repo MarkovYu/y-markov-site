@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="promo.css">
+<style>
+  body{min-height:800px;background:radial-gradient(900px 520px at 80% -15%, rgba(74,134,212,.14), transparent 60%), var(--bg)}
+  .doc{flex:1;width:min(960px,100%);padding:clamp(48px,5vh,66px) var(--gutter-x) 64px}
+  h1{font-family:var(--font-display);font-size:clamp(42px,2vw + 1.2vh,56px);font-weight:600;letter-spacing:-.02em;margin:0 0 10px}
+  .updated{color:var(--dim);font-size:15px;margin-bottom:34px}
+  h2{font-size:23px;font-weight:700;margin:34px 0 12px}
+  p,li{color:var(--dim);font-size:16.5px;line-height:1.68}
+  p{margin:0 0 14px}
+  ul{padding-left:22px;margin:0 0 16px}
+  li{margin:7px 0}
+  b,strong{color:var(--fg);font-weight:700}
+  a{color:var(--accent);text-decoration:none}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--surface2);border:1px solid var(--line2);border-radius:6px;padding:1px 7px;font-size:14px;color:var(--accent3)}
+  @media (max-width:650px){.doc{padding:40px 28px 52px}h1{font-size:36px}p,li{font-size:16px}h2{font-size:21px}}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <img class="logo" src="icon.png" alt="Dual Subtitles">
+    <span class="brand">Dual Subtitles</span>
+    <nav class="nav">
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+    </nav>
+    <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% free</span>
+  </header>
+
+  <main class="doc">
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: 2026-06-23</div>
+
+    <p>Dual Subtitles is a browser extension that shows dual subtitles and lets you translate words while watching video. This policy explains what the extension does with data.</p>
+
+    <h2>What The Extension Stores</h2>
+    <ul>
+      <li><strong>Your settings</strong>, including languages, chosen translator and panel options, are stored locally in your browser using <code>chrome.storage.local</code>.</li>
+      <li><strong>Your saved vocabulary</strong>, including words you click Save on, their translations and the subtitle line they came from, is also stored locally in your browser.</li>
+      <li>This data never leaves your device except as described below, and is not sent to the developer.</li>
+    </ul>
+
+    <h2>What Is Sent To Third Parties</h2>
+    <p>When you turn on the translated line, or click a word to translate it, the text to be translated is sent to the translation service you select in the panel:</p>
+    <ul>
+      <li><strong>DeepL</strong>, only if you enter your own API key: <a href="https://www.deepl.com/privacy">deepl.com/privacy</a></li>
+      <li><strong>LibreTranslate</strong>: <a href="https://libretranslate.com/">libretranslate.com</a></li>
+      <li><strong>MyMemory</strong>: <a href="https://mymemory.translated.net/doc/usage-policy.php">mymemory.translated.net</a></li>
+    </ul>
+    <p>Only the subtitle text or word being translated is sent. No account info, browsing history or personal identifiers are sent.</p>
+
+    <h2>What The Extension Does Not Do</h2>
+    <ul>
+      <li>It does not collect analytics or telemetry.</li>
+      <li>It does not send any data to the developer or to its own servers. The extension has no servers.</li>
+      <li>It does not track your browsing.</li>
+      <li>It does not download or redistribute video. It only reads subtitle text that the page already provides.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <ul>
+      <li><code>storage</code>: save your settings and vocabulary locally.</li>
+      <li><code>tabs</code> and <code>scripting</code>: open the vocabulary page and run the on-page helper that reads subtitle text on supported sites.</li>
+      <li>Host access to Kino.pub, Amazon Prime Video and translation endpoints: required so the extension can run on those video pages and request translations.</li>
+    </ul>
+
+    <h2>Data Deletion</h2>
+    <p>Use <strong>Clear all</strong> on the vocabulary page, or remove the extension, to delete all stored data.</p>
+
+    <h2>Contact</h2>
+    <p>For questions or bug reports, contact the developer at the address listed on the Chrome Web Store listing.</p>
+  </main>
+
+  <footer class="site-footer">
+    <span class="fbrand"><img src="icon.png" alt="">Dual Subtitles</span>
+    <span>Free &middot; no account &middot; works on Prime Video &amp; Kino.pub</span>
+    <nav class="flinks">
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="license.html">License</a>
+      <a href="https://www.deepl.com/pro-api">DeepL API</a>
+      <a href="../index.html">Made by Yuri Markov</a>
+    </nav>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="promo.css">
+<style>
+  body{
+    min-height:100vh;
+    background:
+      radial-gradient(1000px 620px at 84% -12%, rgba(74,134,212,.28), transparent 60%),
+      radial-gradient(760px 520px at 4% 108%, rgba(74,134,212,.14), transparent 60%),
+      radial-gradient(680px 460px at 50% 46%, rgba(107,163,234,.05), transparent 72%),
+      linear-gradient(180deg,#0c0f1a 0%,var(--bg) 54%);
+  }
+  .hero{flex:1;width:100%;max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);align-items:center;gap:clamp(40px,4vw,72px);padding:clamp(8px,2vh,30px) var(--gutter-x) clamp(16px,3vh,44px)}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:clamp(10px,1.6vh,18px);padding:7px 15px;border-radius:999px;
+    background:rgba(255,255,255,.04);border:1px solid var(--line2);font-family:var(--font);
+    font-size:clamp(11px,.78vw,13px);font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent3)}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+  h1{position:relative;z-index:2;font-family:var(--font-display);font-size:clamp(34px,2.4vw + 1.5vh,70px);line-height:1.04;font-weight:600;letter-spacing:-.03em;text-wrap:balance;margin-bottom:clamp(12px,1.6vh,20px)}
+  h1 .target-word{display:inline-block}
+  h1 .g{position:relative;color:var(--accent);padding-right:.04em}
+  h1 .g::after{content:"";position:absolute;left:.02em;right:.08em;bottom:.0em;height:.055em;border-radius:99px;
+    background:linear-gradient(90deg,transparent,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;
+    transition:transform .8s var(--ease-out) .35s}
+  body.revealed h1 .g::after{transform:scaleX(1)}
+
+  .sub{font-size:clamp(16.5px,.45vw + .9vh,21px);line-height:1.55;color:var(--dim);max-width:54ch;margin-bottom:clamp(16px,2vh,26px);text-wrap:pretty}
+  .feats{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:clamp(16px,2vh,26px);max-width:560px}
+  .feat{display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border-radius:12px;background:rgba(255,255,255,.045);
+    border:1px solid var(--line2);font-size:15.5px;font-weight:600;
+    transition:transform .32s var(--ease-out),border-color .28s var(--ease-out),background .28s var(--ease-out)}
+  .feat svg{width:18px;height:18px;color:var(--accent);transition:color .28s var(--ease-out)}
+  .feat:hover{transform:translateY(-3px);border-color:var(--accent-line);background:rgba(74,134,212,.1)}
+  .feat:hover svg{color:var(--accent2)}
+
+  a.cta{display:inline-flex;align-items:center;gap:15px;background:var(--accent-strong);color:#fff;font-weight:600;font-size:17px;
+    padding:12px 13px 12px 26px;border-radius:999px;border:0;text-decoration:none;
+    box-shadow:0 10px 26px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14);
+    transition:transform .2s var(--ease-out),box-shadow .22s var(--ease-out),background .18s var(--ease-out),opacity .62s var(--ease-out)}
+  a.cta .cta-ic{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;
+    background:rgba(255,255,255,.16);transition:transform .2s var(--ease-out),background .18s var(--ease-out)}
+  a.cta .cta-ic svg{width:17px;height:17px}
+  a.cta:hover{transform:translateY(-2px);background:var(--accent-press);
+    box-shadow:0 15px 32px rgba(0,0,0,.5),0 0 0 1px rgba(214,230,255,.3)}
+  a.cta:hover .cta-ic{background:rgba(255,255,255,.26);transform:translateX(3px)}
+  a.cta:active{transform:translateY(0) scale(.98);transition-duration:.09s}
+  a.cta:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .note{margin-top:13px;color:var(--dim);font-size:14.5px;line-height:1.45}
+  .note b{color:var(--fg);font-weight:600}
+  .visual-wrap{position:relative;perspective:1100px}
+  .stage-shell{position:relative;padding:7px;border-radius:27px;background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.09);box-shadow:0 34px 90px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08);
+    transform-style:preserve-3d;transition:transform .4s var(--ease-out),box-shadow .55s var(--ease-out)}
+  .stage-shell:hover{box-shadow:0 44px 110px rgba(0,0,0,.66),inset 0 1px 0 rgba(255,255,255,.1)}
+  .stage{position:relative;width:100%;height:clamp(336px,42vh,470px);border-radius:20px;overflow:hidden;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
+    background:#070708 url("hisgirlfriday.jpg") 50% 30% / cover no-repeat}
+  .stage::after{content:"";position:absolute;inset:0;border-radius:20px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);pointer-events:none}
+  .scrim{position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,7,8,.04) 0%, rgba(7,7,8,.28) 45%, rgba(7,7,8,.92) 100%)}
+  .film-badge{position:absolute;top:14px;left:14px;font-size:12.5px;color:rgba(242,243,247,.82);background:rgba(8,9,13,.74);
+    border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+  .subs{position:absolute;left:5%;right:5%;bottom:7%;text-align:center;text-shadow:0 2px 6px rgba(0,0,0,.95)}
+  .orig{font-size:25px;font-weight:600;line-height:1.3}
+  .orig .w{background:rgba(34,86,143,.88);color:#eaf2ff;border:1px solid rgba(214,230,255,.34);border-radius:5px;padding:0 4px}
+  .trans{margin-top:7px;font-size:18px;font-weight:600;color:var(--accent3)}
+  .pop{position:absolute;left:50%;bottom:46%;width:200px;background:#0c0d10;border:1px solid var(--line2);
+    border-radius:14px;padding:12px 13px;box-shadow:0 18px 50px rgba(0,0,0,.6)}
+  .pop .pw{font-size:19px;font-weight:700}
+  .pop .pt{font-size:16px;color:var(--accent3);margin-top:3px}
+  .pop .pm{font-size:11px;color:var(--dim);margin-top:8px;display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 8px}
+  .pop .pa{display:flex;gap:7px;margin-top:11px}
+  .pop .pb{flex:1;text-align:center;font-size:12px;font-weight:600;padding:7px;border-radius:9px;background:#1c1e26;border:1px solid var(--line2)}
+  .pop .pb.save{background:var(--accent-strong);border-color:rgba(214,230,255,.22);color:#fff}
+  .toggle-chip{position:absolute;top:14px;right:14px;display:flex;align-items:center;gap:9px;background:rgba(8,9,13,.74);
+    border:1px solid var(--line2);border-radius:999px;padding:9px 14px;font-size:14px;font-weight:600}
+  .sw{width:34px;height:19px;border-radius:999px;background:var(--accent);position:relative}
+  .sw::after{content:"";position:absolute;top:2px;right:2px;width:15px;height:15px;border-radius:50%;background:#fff}
+
+  .intro-layer{position:fixed;inset:0;z-index:40;pointer-events:none;overflow:hidden;background:rgba(11,12,15,.94)}
+  .cloud-word,.focus-word{position:absolute;left:0;top:0;white-space:nowrap;will-change:transform,opacity}
+  .cloud-word{font-weight:700;color:rgba(255,255,255,.82);opacity:0;filter:blur(.1px);transition:opacity .55s ease}
+  .focus-word{z-index:45;font-family:var(--font-display);font-weight:600;letter-spacing:-.03em;color:#fff;opacity:0;line-height:1.04;transition:transform .95s cubic-bezier(.18,.72,.18,1),opacity .55s ease}
+  .focus-word.accent{color:var(--accent)}
+  body:not(.motion-done) h1{opacity:0}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .62s var(--ease-out),transform .62s var(--ease-out)}
+  body.revealed .reveal{opacity:1;transform:none}
+  body.revealed .site-header.reveal{transition-delay:.05s}
+  body.revealed .intro-layer{opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+  body.clearing .cloud-word{opacity:0!important}
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;padding:24px 28px 38px;gap:28px}
+    h1{font-size:44px}
+    .stage{height:360px}
+  }
+  @media (max-width:650px){
+    .intro-layer{display:none}
+    .cloud-word,.focus-word{display:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    body:not(.motion-done) h1{opacity:1}
+    h1 .g::after{transform:scaleX(1)}
+    .hero{padding:28px 28px 38px;gap:26px}
+    h1{font-size:clamp(36px,10.5vw,44px)}
+    .stage{height:340px}
+    .pop{display:none}
+    .orig{font-size:21px}
+    .trans{font-size:16px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .intro-layer{display:none}.reveal{opacity:1;transform:none;transition:none}body:not(.motion-done) h1{opacity:1}
+    h1 .g::after{transition:none;transform:scaleX(1)}
+    a.cta,a.cta .cta-ic,.feat,.feat svg,.stage-shell{transition:none}
+  }
+</style>
+</head>
+<body>
+  <div class="intro-layer" aria-hidden="true"></div>
+
+  <header class="site-header reveal">
+    <img class="logo" src="icon.png" alt="Dual Subtitles">
+    <span class="brand">Dual Subtitles</span>
+    <nav class="nav">
+      <a href="index.html" class="active">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+    </nav>
+    <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% free</span>
+  </header>
+
+  <main class="hero">
+    <section>
+      <span class="eyebrow reveal">Chrome extension &middot; 100% free</span>
+      <h1><span class="target-word" data-focus="0">Two subtitles.</span><br><span class="target-word" data-focus="1">One click</span> <span class="target-word g" data-focus="2">to learn.</span></h1>
+      <p class="sub reveal" style="transition-delay:.12s">Watch films with the original line and a live translation underneath. Tap any word to translate it and save it to your vocabulary.</p>
+      <div class="feats reveal" style="transition-delay:.2s">
+        <span class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h10"/></svg>Dual subtitles</span>
+        <span class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h14M9 4v4M7 16l3-8 3 8M19 12h-6M16 9l3 3-3 3"/></svg>Click-to-translate</span>
+        <span class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Vocabulary book</span>
+        <span class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>No account, no fees</span>
+      </div>
+      <!-- Install CTA. Replace href with the real Chrome Web Store listing URL once published
+           (or point it at a direct .zip download if distributing the build directly). -->
+      <a class="cta reveal" href="https://chromewebstore.google.com/" target="_blank" rel="noopener" style="transition-delay:.28s">Add to Chrome &mdash; free<span class="cta-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></a>
+      <div class="note reveal" style="transition-delay:.34s">Works on <b>Amazon Prime Video</b> and <b>Kino.pub</b> &mdash; more streaming sites supported on request.</div>
+    </section>
+
+    <section class="visual-wrap reveal" style="transition-delay:.18s">
+      <div class="stage-shell">
+      <div class="stage" role="img" aria-label="Dual Subtitles over a scene from His Girl Friday (1940): the line “Walter, you're wonderful, in a loathsome sort of way.” shown with its German translation underneath, and a popup translating the word “loathsome” to “abscheulich”.">
+        <div class="scrim"></div>
+        <div class="film-badge">His Girl Friday (1940) &middot; public domain</div>
+        <div class="toggle-chip">Show translation <span class="sw"></span></div>
+        <div class="pop">
+          <div class="pw">loathsome</div>
+          <div class="pt">abscheulich</div>
+          <span class="pm">en &rarr; de &middot; DeepL</span>
+        </div>
+        <div class="subs">
+          <div class="orig">Walter, you're wonderful, in a <span class="w">loathsome</span> sort of way.</div>
+          <div class="trans">Walter, du bist wunderbar &mdash; auf eine abscheuliche Art.</div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer reveal" style="transition-delay:.4s">
+    <span class="fbrand"><img src="icon.png" alt="">Dual Subtitles</span>
+    <span>Free &middot; no account &middot; works on Prime Video &amp; Kino.pub</span>
+    <nav class="flinks">
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="license.html">License</a>
+      <a href="https://www.deepl.com/pro-api">DeepL API</a>
+      <a href="../index.html">Made by Yuri Markov</a>
+    </nav>
+  </footer>
+
+  <script>
+    (function(){
+      var body=document.body;
+      var layer=document.querySelector('.intro-layer');
+      var timers=[];
+      function clearAll(){timers.forEach(function(t){clearTimeout(t);});timers=[];}
+      function unbind(){['pointerdown','keydown','wheel','touchstart'].forEach(function(ev){window.removeEventListener(ev,skip,true);});}
+      function done(){
+        clearAll();
+        body.classList.remove('clearing');
+        body.classList.add('motion-done','revealed');
+        if(layer){layer.style.opacity='0';layer.style.visibility='hidden';setTimeout(function(){layer.style.display='none';},450);}
+        try{sessionStorage.setItem('kpds_seen','1');}catch(e){}
+        unbind();
+      }
+      function skip(){done();}
+
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var seen=false;try{seen=sessionStorage.getItem('kpds_seen')==='1';}catch(e){}
+      if(reduce||seen){done();return;}
+
+      // let any interaction fast-forward the intro
+      ['pointerdown','keydown','wheel','touchstart'].forEach(function(ev){
+        window.addEventListener(ev,skip,{capture:true,passive:true});
+      });
+
+      function buildIntro(){
+      var words=[
+        'word','Wort','mot','palabra','parola','slovo','palavra','woord','ord',
+        'subtitle','Untertitel','sous-titres','subtitulo','sottotitolo','napisy','legenda',
+        'learn','lernen','apprendre','aprender','imparare','leren','izle','watch','schauen',
+        'language','Sprache','langue','idioma','lingua','dil','meaning','story','voice','scene',
+        '\u0441\u043b\u043e\u0432\u043e','\u0441\u0443\u0431\u0442\u0438\u0442\u0440\u044b','\u0443\u0447\u0438\u0442\u044c','\u044f\u0437\u044b\u043a',
+        '\u8a00\u8449','\u5b57\u5e55','\u8a33\u3059','\ud55c\ub9c8\ub514','\uc790\ub9c9',
+        '\u0643\u0644\u0645\u0629','\u062a\u0631\u062c\u0645\u0629','\u03bb\u03ad\u03be\u03b7','\u03b3\u03bb\u03ce\u03c3\u03c3\u03b1'
+      ];
+      var cloudCount=112;
+      for(var i=0;i<cloudCount;i++){
+        timers.push(setTimeout(function(){
+          var el=document.createElement('span');
+          el.className='cloud-word';
+          el.textContent=words[Math.floor(Math.random()*words.length)];
+          el.style.fontSize=(13+Math.random()*24).toFixed(0)+'px';
+          el.style.transform='translate3d('+(4+Math.random()*92)+'vw,'+(7+Math.random()*84)+'vh,0)';
+          if(Math.random()<.18) el.style.color='var(--accent)';
+          layer.appendChild(el);
+          requestAnimationFrame(function(){el.style.opacity=(.16+Math.random()*.5).toFixed(2);});
+        },i*16));
+      }
+
+      var focusLabels=['Two subtitles.','One click','to learn.'];
+      var focusEls=focusLabels.map(function(label,idx){
+        var el=document.createElement('span');
+        el.className='focus-word'+(idx===2?' accent':'');
+        el.textContent=label;
+        el.style.fontSize=(idx===0?'54px':'50px');
+        layer.appendChild(el);
+        var x=[18,52,36][idx]+(Math.random()*6-3);
+        var y=[22,53,69][idx]+(Math.random()*6-3);
+        el.style.transform='translate3d('+x+'vw,'+y+'vh,0)';
+        return el;
+      });
+
+      timers.push(setTimeout(function(){
+        focusEls.forEach(function(el,idx){
+          timers.push(setTimeout(function(){el.style.opacity='1';},idx*380));
+        });
+      },620));
+
+      timers.push(setTimeout(function(){
+        body.classList.add('clearing');
+        document.querySelectorAll('.target-word').forEach(function(target){
+          var idx=Number(target.getAttribute('data-focus'));
+          var rect=target.getBoundingClientRect();
+          focusEls[idx].style.fontSize=window.getComputedStyle(target).fontSize;
+          focusEls[idx].style.transform='translate3d('+rect.left+'px,'+rect.top+'px,0)';
+        });
+      },2250));
+
+      timers.push(setTimeout(done,3350));
+      }
+
+      // Start only once the display font is ready, so the headline never
+      // animates in a fallback face and then visibly swaps. Fallback timer
+      // guarantees the intro still runs if font loading stalls.
+      if(document.fonts&&document.fonts.ready){
+        var started=false,go=function(){if(started)return;started=true;buildIntro();};
+        document.fonts.ready.then(go);
+        timers.push(setTimeout(go,900));
+      }else{
+        buildIntro();
+      }
+    })();
+  </script>
+
+  <script>
+    // Subtle mouse-tilt on the film frame (desktop, fine pointer, motion-ok).
+    (function(){
+      var fine=window.matchMedia&&window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!fine||reduce)return;
+      var wrap=document.querySelector('.visual-wrap'),shell=document.querySelector('.stage-shell');
+      if(!wrap||!shell)return;
+      var raf=0,tx=0,ty=0;
+      function apply(){raf=0;shell.style.transform='translateY(-3px) rotateX('+ty+'deg) rotateY('+tx+'deg)';}
+      wrap.addEventListener('pointermove',function(e){
+        var r=wrap.getBoundingClientRect();
+        var px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+        tx=px*7; ty=-py*7;
+        if(!raf)raf=requestAnimationFrame(apply);
+      });
+      wrap.addEventListener('pointerleave',function(){tx=0;ty=0;shell.style.transform='';});
+    })();
+  </script>
+</body>
+</html>
