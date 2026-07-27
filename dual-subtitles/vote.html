@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="promo.css">
+<style>
+  body{min-height:100vh;background:radial-gradient(900px 520px at 72% -18%, rgba(74,134,212,.18), transparent 60%), var(--bg)}
+  .vmain{flex:1;width:100%;display:grid;grid-template-columns:minmax(0,.92fr) minmax(420px,1.08fr);gap:clamp(34px,4.2vw,68px);align-items:start;padding:clamp(42px,5vh,70px) var(--gutter-x) clamp(42px,5vh,66px)}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:clamp(12px,1.8vh,18px);padding:7px 15px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--line2);font-size:12px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--accent3)}
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  h1{font-family:var(--font-display);font-size:clamp(38px,2.55vw + 1.35vh,62px);line-height:1.06;font-weight:600;letter-spacing:-.025em;text-wrap:balance;margin:0 0 clamp(12px,1.8vh,18px)}
+  h1 span{color:var(--accent)}
+  .lead{color:var(--dim);font-size:clamp(16.5px,.5vw + .9vh,21px);line-height:1.55;max-width:720px;margin:0 0 clamp(22px,3vh,34px)}
+  .points{display:grid;gap:12px;max-width:690px}
+  .point{display:flex;gap:12px;align-items:flex-start;color:var(--dim);font-size:15.5px;line-height:1.5}
+  .point b{color:var(--fg)}
+  .dot{flex:none;width:26px;height:26px;border-radius:8px;background:var(--accent-soft);border:1px solid var(--accent-line);display:flex;align-items:center;justify-content:center;color:var(--accent3);font-weight:800;font-size:13px}
+  .ideas{margin-top:clamp(24px,3.4vh,38px);display:flex;flex-wrap:wrap;gap:10px;max-width:720px}
+  .idea{border:1px solid var(--line2);background:rgba(255,255,255,.045);border-radius:999px;padding:9px 13px;font-size:14.5px;font-weight:700;color:var(--fg)}
+  .form-card{background:rgba(12,13,16,.92);border:1px solid var(--line2);border-radius:12px;box-shadow:0 24px 70px rgba(0,0,0,.48);overflow:hidden}
+  .form-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line)}
+  .form-head b{font-size:16px}
+  .hosted{color:var(--accent3);font-size:12px;font-weight:800;border:1px solid var(--accent-line);background:var(--accent-soft);border-radius:999px;padding:5px 10px;white-space:nowrap}
+  .form-body{padding:16px}
+  .form-frame{width:100%;height:min(690px,72vh);border:0;border-radius:8px;background:#fff}
+  .missing-form{display:none;min-height:360px;border:1px dashed var(--line2);border-radius:8px;background:rgba(255,255,255,.035);align-items:center;justify-content:center;text-align:center;padding:28px;color:var(--dim);line-height:1.5}
+  .missing-form b{display:block;color:var(--fg);font-size:20px;margin-bottom:8px}
+  .fallback{margin-top:14px;color:var(--dim);font-size:14px;line-height:1.5}
+  .fallback a{color:var(--accent2);font-weight:700;text-decoration:none}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;background:var(--surface2);border:1px solid var(--line2);border-radius:6px;padding:1px 6px;color:var(--accent3)}
+  @media (max-width:980px){.vmain{grid-template-columns:1fr}.form-frame{height:720px}}
+  @media (max-width:650px){.vmain{padding:38px 28px 48px;gap:30px}h1{font-size:38px}.lead{font-size:17px}.form-head{align-items:flex-start;flex-direction:column}.form-frame{height:680px}.idea{font-size:14px}}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <img class="logo" src="icon.png" alt="Dual Subtitles">
+    <span class="brand">Dual Subtitles</span>
+    <nav class="nav">
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+      <a href="vote.html" class="active">Vote</a>
+    </nav>
+    <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% free</span>
+  </header>
+
+  <main class="vmain">
+    <section>
+      <span class="eyebrow">Community vote</span>
+      <h1>Which streaming <span>portal</span> should come next?</h1>
+      <p class="lead">Dual Subtitles already supports Amazon Prime Video and Kino.pub. Vote for the next site, or suggest one that is missing from the list.</p>
+
+      <div class="points">
+        <div class="point"><span class="dot">1</span><span><b>One vote per person.</b> Google Forms handles submissions, rate limits and spam protection.</span></div>
+        <div class="point"><span class="dot">2</span><span><b>No account needed on this site.</b> The page does not store votes or run a custom voting backend.</span></div>
+        <div class="point"><span class="dot">3</span><span><b>Priority is practical.</b> Sites with accessible subtitles and enough demand move up the list.</span></div>
+      </div>
+
+      <div class="ideas" aria-label="Suggested portals">
+        <span class="idea">Netflix</span>
+        <span class="idea">Disney+</span>
+        <span class="idea">YouTube</span>
+        <span class="idea">Apple TV+</span>
+        <span class="idea">Max</span>
+        <span class="idea">Crunchyroll</span>
+        <span class="idea">Arte</span>
+        <span class="idea">Other</span>
+      </div>
+    </section>
+
+    <section class="form-card" aria-label="Google Forms vote">
+      <div class="form-head">
+        <b>Vote in Google Forms</b>
+        <span class="hosted">Hosted by Google</span>
+      </div>
+      <div class="form-body">
+        <!-- Replace both data URLs below with your real Google Forms embed URL and public form URL. -->
+        <iframe
+          class="form-frame"
+          data-form-embed-url="https://docs.google.com/forms/d/e/1FAIpQLSc5t_6yDejL-L2J4sDJCA_fHRk-EWuYxfSX7SIPlX4-0Uh-9Q/viewform?embedded=true"
+          loading="lazy"
+          title="Vote for the next Dual Subtitles portal">
+        </iframe>
+        <div class="missing-form">
+          <p><b>Voting form coming soon</b>The Google Forms link has not been connected yet.</p>
+        </div>
+        <p class="fallback">If the form does not load, <a data-form-public-url="https://forms.gle/evaDoia2aBFKVjWD7" href="#" target="_blank" rel="noopener">open it directly in Google Forms</a>.</p>
+        <!-- Setup: create a Google Form, click Send -> <>. Copy the embed URL into the iframe src above, then copy the public form link into the fallback link. -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="fbrand"><img src="icon.png" alt="">Dual Subtitles</span>
+    <span>Free &middot; no account &middot; works on Prime Video &amp; Kino.pub</span>
+    <nav class="flinks">
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+      <a href="vote.html">Vote</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="license.html">License</a>
+      <a href="https://www.deepl.com/pro-api">DeepL API</a>
+      <a href="../index.html">Made by Yuri Markov</a>
+    </nav>
+  </footer>
+  <script>
+    (function(){
+      var frame=document.querySelector('[data-form-embed-url]');
+      var missing=document.querySelector('.missing-form');
+      var link=document.querySelector('[data-form-public-url]');
+      var embed=frame&&frame.getAttribute('data-form-embed-url');
+      var publicUrl=link&&link.getAttribute('data-form-public-url');
+      var ready=embed&&embed.indexOf('PASTE_GOOGLE_FORM_ID_HERE')<0;
+      if(frame){
+        if(ready){frame.src=embed;}
+        else{frame.style.display='none';if(missing)missing.style.display='flex';}
+      }
+      if(link){
+        if(publicUrl&&publicUrl.indexOf('PASTE_YOUR_FORM_LINK_HERE')<0){link.href=publicUrl;}
+        else{link.removeAttribute('href');link.style.pointerEvents='none';link.style.opacity='.6';}
+      }
+    })();
+  </script>
+</body>
+</html>
