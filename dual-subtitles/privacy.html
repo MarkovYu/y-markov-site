@@ -31,45 +31,49 @@
       <a href="features.html">Features</a>
       <a href="deepl-setup.html">DeepL setup</a>
       <a href="vote.html">Vote</a>
+      <a href="https://chromewebstore.google.com/detail/dual-subtitles-learn-lang/jajbflfkcnblbbhfahhagfkonbeghpbc" target="_blank" rel="noopener">Chrome Store</a>
     </nav>
     <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% free</span>
   </header>
 
   <main class="doc">
     <h1>Privacy Policy</h1>
-    <div class="updated">Last updated: 2026-06-23</div>
+    <div class="updated">Last updated: 2026-07-29</div>
 
     <p>Dual Subtitles is a browser extension that shows dual subtitles and lets you translate words while watching video. This policy explains what the extension does with data.</p>
 
     <h2>What The Extension Stores</h2>
     <ul>
-      <li><strong>Your settings</strong>, including languages, chosen translator and panel options, are stored locally in your browser using <code>chrome.storage.local</code>.</li>
+      <li><strong>Your settings</strong>, including languages, chosen translator, subtitle size, timing and panel options, are stored locally in your browser using <code>chrome.storage.local</code>.</li>
       <li><strong>Your saved vocabulary</strong>, including words you click Save on, their translations and the subtitle line they came from, is also stored locally in your browser.</li>
       <li>This data never leaves your device except as described below, and is not sent to the developer.</li>
     </ul>
 
     <h2>What Is Sent To Third Parties</h2>
-    <p>When you turn on the translated line, or click a word to translate it, the text to be translated is sent to the translation service you select in the panel:</p>
+    <p>When Chrome built-in translation is available and selected, translation is processed locally by Chrome on your device. The extension does not send that text to the developer or to a third-party translation server.</p>
+    <p>If you explicitly choose an online translator, or enter an API key, only the text being translated is sent to the translation service you selected in the panel:</p>
     <ul>
       <li><strong>DeepL</strong>, only if you enter your own API key: <a href="https://www.deepl.com/privacy">deepl.com/privacy</a></li>
       <li><strong>LibreTranslate</strong>: <a href="https://libretranslate.com/">libretranslate.com</a></li>
       <li><strong>MyMemory</strong>: <a href="https://mymemory.translated.net/doc/usage-policy.php">mymemory.translated.net</a></li>
     </ul>
-    <p>Only the subtitle text or word being translated is sent. No account info, browsing history or personal identifiers are sent.</p>
+    <p>No account information, browsing history, analytics identifiers or personal identifiers are sent by the extension.</p>
 
     <h2>What The Extension Does Not Do</h2>
     <ul>
       <li>It does not collect analytics or telemetry.</li>
       <li>It does not send any data to the developer or to its own servers. The extension has no servers.</li>
       <li>It does not track your browsing.</li>
-      <li>It does not download or redistribute video. It only reads subtitle text that the page already provides.</li>
+      <li>It does not download, record, copy or redistribute video or audio. It only reads subtitle text that the page already provides.</li>
     </ul>
 
     <h2>Permissions</h2>
     <ul>
       <li><code>storage</code>: save your settings and vocabulary locally.</li>
-      <li><code>tabs</code> and <code>scripting</code>: open the vocabulary page and run the on-page helper that reads subtitle text on supported sites.</li>
-      <li>Host access to Kino.pub, Amazon Prime Video and translation endpoints: required so the extension can run on those video pages and request translations.</li>
+      <li><code>scripting</code>: run a small on-page helper that reads subtitle metadata and playback timing on supported video pages.</li>
+      <li><code>activeTab</code>: lets the toolbar popup show or restore the panel on the current active tab after you click the extension button.</li>
+      <li>Host access to Amazon Prime Video and Kino.pub: required so the extension can run on those video pages.</li>
+      <li>Host access to DeepL, LibreTranslate and MyMemory: required only when you choose one of those online translation services.</li>
     </ul>
 
     <h2>Data Deletion</h2>
@@ -87,6 +91,7 @@
       <a href="features.html">Features</a>
       <a href="deepl-setup.html">DeepL setup</a>
       <a href="vote.html">Vote</a>
+      <a href="https://chromewebstore.google.com/detail/dual-subtitles-learn-lang/jajbflfkcnblbbhfahhagfkonbeghpbc" target="_blank" rel="noopener">Chrome Store</a>
       <a href="privacy.html">Privacy</a>
       <a href="license.html">License</a>
       <a href="https://www.deepl.com/pro-api">DeepL API</a>
