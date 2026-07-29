@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="promo.css">
+<style>
+  body{min-height:100vh;background:radial-gradient(900px 500px at 50% -20%, rgba(74,134,212,.16), transparent 60%), var(--bg)}
+  .fmain{flex:1;width:100%;display:flex;flex-direction:column;padding:clamp(28px,4vh,58px) var(--gutter-x) clamp(26px,3.8vh,50px)}
+  h2{font-family:var(--font-display);font-size:clamp(34px,2.05vw + 1.3vh,56px);font-weight:600;letter-spacing:-.02em;text-wrap:balance;margin:0 0 clamp(6px,1vh,12px)}
+  .lead{color:var(--dim);font-size:clamp(16.5px,.45vw + .9vh,21px);margin-bottom:clamp(22px,3.2vh,44px);line-height:1.45}
+  .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.4vw,26px);flex:1}
+  .card{background:var(--surface);border:1px solid var(--line2);border-radius:14px;padding:clamp(21px,1.8vw,34px);display:flex;flex-direction:column;
+    transition:transform .42s var(--ease-out),border-color .3s var(--ease-out),background .3s var(--ease-out),box-shadow .42s var(--ease-out),opacity .7s var(--ease-out),filter .7s var(--ease-out)}
+  .card:hover{transform:translateY(-5px);border-color:var(--accent-line);background:#181b24;box-shadow:0 22px 50px rgba(0,0,0,.4)}
+  .ic{width:clamp(46px,3.2vw,58px);height:clamp(46px,3.2vw,58px);border-radius:13px;background:var(--surface2);border:1px solid var(--line2);color:var(--accent3);display:flex;align-items:center;justify-content:center;margin-bottom:clamp(15px,1.6vh,24px);
+    transition:transform .42s var(--ease-out),color .3s var(--ease-out),border-color .3s var(--ease-out)}
+  .card:hover .ic{transform:scale(1.08) rotate(-3deg);color:var(--accent2);border-color:var(--accent-line)}
+  .ic svg{width:56%;height:56%}
+  @media (prefers-reduced-motion:reduce){.card,.ic{transition:none}}
+  .card h3{font-size:clamp(19px,1.08vw,23px);font-weight:700;margin-bottom:clamp(7px,.9vh,10px)}
+  .card p{color:var(--dim);font-size:clamp(14.5px,.9vw,16.5px);line-height:1.55}
+  .demo{margin-top:auto;padding-top:clamp(16px,1.8vh,24px)}
+  .voc{background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+  .voc .vw{font-size:17px;font-weight:700}.voc .vt{font-size:14px;color:var(--accent3);margin-top:3px}
+  .voc .vtag{display:inline-block;margin-top:9px;font-size:12px;color:var(--dim);border:1px solid var(--line2);border-radius:999px;padding:3px 9px}
+  .prov{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+  .prov span{font-size:13px;color:var(--dim);background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:6px 10px}
+  .mini{position:relative;height:clamp(96px,13vh,150px);border-radius:8px;overflow:hidden;border:1px solid var(--line);background:#070708 url("hisgirlfriday.jpg") 50% 26% / cover no-repeat}
+  .mini .ms{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,7,8,.08),rgba(7,7,8,.55) 55%,rgba(7,7,8,.9))}
+  .mini .badge{position:absolute;top:7px;left:7px;font-size:9.5px;color:var(--dim);background:rgba(0,0,0,.5);border:1px solid var(--line);border-radius:999px;padding:2px 7px}
+  .mini .ml{position:absolute;left:8px;right:8px;bottom:9px;text-align:center;text-shadow:0 2px 5px rgba(0,0,0,.95)}
+  .mini .ml .o{font-size:13.5px;font-weight:600;line-height:1.25}
+  .mini .ml .o .w{background:rgba(34,86,143,.88);color:#eaf2ff;border:1px solid rgba(214,230,255,.32);border-radius:4px;padding:0 2px}
+  .mini .ml .t{font-size:12px;color:var(--accent3);margin-top:3px}
+  .sw{width:38px;height:21px;border-radius:999px;background:var(--accent);position:relative;display:inline-block}
+  .sw::after{content:"";position:absolute;top:2px;right:2px;width:17px;height:17px;border-radius:50%;background:#fff}
+  @media (max-width:1050px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:650px){.fmain{padding:38px 28px}.grid{grid-template-columns:1fr}h2{font-size:36px}.lead{font-size:17px}}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <img class="logo" src="icon.png" alt="Dual Subtitles">
+    <span class="brand">Dual Subtitles</span>
+    <nav class="nav">
+      <a href="index.html">Overview</a>
+      <a href="features.html" class="active">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+      <a href="vote.html">Vote</a>
+      <a href="https://chromewebstore.google.com/detail/dual-subtitles-learn-lang/jajbflfkcnblbbhfahhagfkonbeghpbc" target="_blank" rel="noopener">Chrome Store</a>
+    </nav>
+    <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>100% free</span>
+  </header>
+
+  <main class="fmain">
+    <h2 class="sr">Learn a language while you watch</h2>
+    <div class="lead sr">On Amazon Prime Video and Kino.pub &mdash; more sites on request. One toggle, no sign-up, no fees.</div>
+
+    <div class="grid">
+      <div class="card sr">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h11"/></svg></span>
+        <h3>Dual subtitles</h3>
+        <p>See the original line with a live translation right underneath. Flip it on with one switch.</p>
+        <div class="demo">
+          <div class="mini">
+            <div class="ms"></div>
+            <div class="badge">His Girl Friday (1940) &middot; public domain</div>
+            <div class="ml">
+              <div class="o">&hellip;in a <span class="w">loathsome</span> sort of way.</div>
+              <div class="t">&hellip;auf eine abscheuliche Art.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:9px;margin-top:12px;font-size:13px;font-weight:600">Show translation <span class="sw"></span></div>
+        </div>
+      </div>
+
+      <div class="card sr">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7 17 2-7 7-2z"/></svg></span>
+        <h3>Tap to translate</h3>
+        <p>Click any word in the subtitles to instantly see its meaning &mdash; without pausing.</p>
+        <div class="demo"><div class="voc"><div class="vw">loathsome</div><div class="vt">abscheulich</div><span class="vtag">en &rarr; de &middot; DeepL</span></div></div>
+      </div>
+
+      <div class="card sr">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        <h3>Save to vocabulary</h3>
+        <p>Build your personal word book &mdash; every saved word keeps its translation and the line it came from.</p>
+        <div class="demo"><div class="voc"><div class="vw">wonderful</div><div class="vt">wunderbar</div><span class="vtag">en &rarr; de</span></div></div>
+      </div>
+
+      <div class="card sr">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Free &amp; private</h3>
+        <p>No account, no payment, no tracking. Your words stay on your device. Choose your translator.</p>
+        <div class="demo"><div class="prov"><span>DeepL</span><span>LibreTranslate</span><span>MyMemory</span></div></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span class="fbrand"><img src="icon.png" alt="">Dual Subtitles</span>
+    <span>Free &middot; no account &middot; works on Prime Video &amp; Kino.pub</span>
+    <nav class="flinks">
+      <a href="index.html">Overview</a>
+      <a href="features.html">Features</a>
+      <a href="deepl-setup.html">DeepL setup</a>
+      <a href="vote.html">Vote</a>
+      <a href="https://chromewebstore.google.com/detail/dual-subtitles-learn-lang/jajbflfkcnblbbhfahhagfkonbeghpbc" target="_blank" rel="noopener">Chrome Store</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="license.html">License</a>
+      <a href="https://www.deepl.com/pro-api">DeepL API</a>
+      <a href="../index.html">Made by Yuri Markov</a>
+    </nav>
+  </footer>
+
+  <script>
+    (function(){
+      var els=[].slice.call(document.querySelectorAll('.sr'));
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce||!('IntersectionObserver'in window)){els.forEach(function(e){e.classList.add('in');});return;}
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if(!en.isIntersecting)return;
+          var el=en.target;
+          var delay=Math.min(el.hasAttribute('data-sr-i')?+el.getAttribute('data-sr-i'):0,6)*80;
+          setTimeout(function(){el.classList.add('in');},delay);
+          io.unobserve(el);
+        });
+      },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      // stagger cards within the grid
+      var cards=document.querySelectorAll('.grid .card.sr');
+      cards.forEach(function(c,i){c.setAttribute('data-sr-i',i);});
+      els.forEach(function(e){io.observe(e);});
+      // safety: never leave content hidden if IO doesn't fire (e.g. no paint)
+      setTimeout(function(){els.forEach(function(e){e.classList.add('in');});},1500);
+    })();
+  </script>
+</body>
+</html>
