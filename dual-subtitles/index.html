@@ -53,6 +53,9 @@
   a.cta:focus-visible{outline:2px solid #fff;outline-offset:3px}
   .note{margin-top:13px;color:var(--dim);font-size:14.5px;line-height:1.45}
   .note b{color:var(--fg);font-weight:600}
+  .support{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;max-width:620px}
+  .support span{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line2);background:rgba(255,255,255,.045);border-radius:999px;padding:7px 11px;font-size:13px;font-weight:700;color:var(--accent3)}
+  .support span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .visual-wrap{position:relative;perspective:1100px}
   .stage-shell{position:relative;padding:7px;border-radius:27px;background:rgba(255,255,255,.035);
     border:1px solid rgba(255,255,255,.09);box-shadow:0 34px 90px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.08);
@@ -146,7 +149,13 @@
         <span class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>No account, no fees</span>
       </div>
       <a class="cta reveal" href="https://chromewebstore.google.com/detail/dual-subtitles-learn-lang/jajbflfkcnblbbhfahhagfkonbeghpbc" target="_blank" rel="noopener" style="transition-delay:.28s">Add to Chrome &mdash; free<span class="cta-ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></a>
-      <div class="note reveal" style="transition-delay:.34s">Works on <b>Amazon Prime Video</b> and <b>Kino.pub</b> &mdash; more streaming sites supported on request.</div>
+      <div class="note reveal" style="transition-delay:.34s">Works on <b>Prime Video</b>, <b>Kino.pub</b>, <b>YouTube</b> and <b>HDRezka / Rezka players</b>.</div>
+      <div class="support reveal" style="transition-delay:.38s" aria-label="Supported sites">
+        <span>Prime Video</span>
+        <span>Kino.pub</span>
+        <span>YouTube</span>
+        <span>HDRezka / Rezka</span>
+      </div>
     </section>
 
     <section class="visual-wrap reveal" style="transition-delay:.18s">
@@ -171,7 +180,7 @@
 
   <footer class="site-footer reveal" style="transition-delay:.4s">
     <span class="fbrand"><img src="icon.png" alt="">Dual Subtitles</span>
-    <span>Free &middot; no account &middot; works on Prime Video &amp; Kino.pub</span>
+    <span>Free &middot; no account &middot; works on Prime Video, Kino.pub, YouTube &amp; Rezka players</span>
     <nav class="flinks">
       <a href="index.html">Overview</a>
       <a href="features.html">Features</a>
